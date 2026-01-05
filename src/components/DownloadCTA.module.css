@@ -1,8 +1,14 @@
 .downloadCta {
     background: #fcfaf2;
-    padding: 80px 20px;
+    padding: 64px 20px;
     position: relative;
     overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .downloadCta {
+        padding: 96px 32px;
+    }
 }
 
 .container {

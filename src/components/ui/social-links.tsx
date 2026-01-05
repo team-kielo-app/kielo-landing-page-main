@@ -47,7 +47,7 @@ export function SocialLinks({ socials, className, ...props }: SocialLinksProps) 
 
     return (
         <div
-            className={cn("flex flex-wrap items-center justify-center gap-x-10 gap-y-4", className)}
+            className={cn("grid grid-cols-2 gap-8 md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-10 md:gap-y-4", className)}
             {...props}
         >
             {socials.map((social, index) => {
@@ -63,7 +63,7 @@ export function SocialLinks({ socials, className, ...props }: SocialLinksProps) 
                         <Component
                             {...linkProps}
                             className={cn(
-                                "group relative cursor-pointer py-2 transition-opacity duration-200",
+                                "group relative cursor-pointer py-2 transition-opacity duration-200 flex flex-col items-center justify-center",
                                 hoveredSocial && hoveredSocial !== social.name
                                     ? "opacity-30"
                                     : "opacity-100"
@@ -77,16 +77,16 @@ export function SocialLinks({ socials, className, ...props }: SocialLinksProps) 
                                 setClicked(true)
                             }}
                         >
-                            <span className="block text-2xl font-bold text-gray-600 group-hover:text-[var(--color-kielo-purple)] transition-colors duration-200">
+                            <span className="block text-2xl font-bold text-gray-600 group-hover:text-[var(--color-kielo-purple)] transition-colors duration-200 text-center">
                                 {social.name}
                             </span>
                             {/* Mobile: Always show icon inline */}
                             {isMobile && (
-                                <div className="flex flex-col items-center">
+                                <div className="flex flex-col items-center mt-3">
                                     <img
                                         src={social.image}
                                         alt={social.name}
-                                        className="size-12 mb-1"
+                                        className="size-12"
                                     />
                                 </div>
                             )}

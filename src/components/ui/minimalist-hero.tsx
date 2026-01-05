@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { TextRotate } from './text-rotate';
@@ -62,17 +62,19 @@ export const MinimalistHero = ({
     height,
     leftLogoSrc,
 }: MinimalistHeroProps) => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
     return (
         <div
             className={cn(
-                'relative flex w-full flex-col items-center justify-start overflow-hidden p-8 font-sans md:p-12',
-                !height && 'min-h-screen',
+                'relative flex w-full flex-col items-center justify-start overflow-hidden font-sans',
+                !height && 'min-h-[80vh] md:min-h-screen',
                 className
             )}
             style={height ? { height } : undefined}
         >
             {/* Header */}
-            <header className="z-30 flex w-full max-w-[1280px] items-center justify-between mt-10 py-4">
+            <header className="z-30 flex w-full max-w-[1280px] items-center justify-between mt-6 md:mt-10 py-4 px-4 md:px-0">
                 {leftLogoSrc ? (
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -80,7 +82,7 @@ export const MinimalistHero = ({
                         transition={{ duration: 0.5 }}
                     >
                         <a href="/">
-                            <img src={leftLogoSrc} alt="Logo" style={{ maxHeight: '160px', height: 'auto', width: 'auto' }} className="object-contain cursor-pointer" />
+                            <img src={leftLogoSrc} alt="Logo" style={{ maxHeight: '160px', height: 'auto', width: 'auto' }} className="object-contain cursor-pointer h-12 md:h-auto" />
                         </a>
                     </motion.div>
                 ) : (
@@ -93,24 +95,64 @@ export const MinimalistHero = ({
                         {logoText}
                     </motion.div>
                 )}
-                <div className="flex items-center space-x-4 md:space-x-8 lg:space-x-12">
+
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center space-x-4 md:space-x-8 lg:space-x-12">
                     {navLinks.map((link) => (
                         <NavLink key={link.label} href={link.href}>
                             {link.label}
                         </NavLink>
                     ))}
                 </div>
+
+                {/* Mobile Menu Button */}
                 <motion.button
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="hidden"
-                    aria-label="Open menu"
+                    className="flex flex-col gap-1.5 md:hidden p-2 z-50 relative"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    <span className="block h-0.5 w-6 bg-gray-800"></span>
-                    <span className="block h-0.5 w-6 bg-gray-800"></span>
-                    <span className="block h-0.5 w-5 bg-gray-800"></span>
+                    <motion.span
+                        animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+                        className="block h-0.5 w-6 bg-gray-800 origin-center transition-transform"
+                    ></motion.span>
+                    <motion.span
+                        animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
+                        className="block h-0.5 w-6 bg-gray-800 transition-opacity"
+                    ></motion.span>
+                    <motion.span
+                        animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
+                        className="block h-0.5 w-6 bg-gray-800 origin-center transition-transform"
+                    ></motion.span>
                 </motion.button>
+
+                {/* Mobile Menu Overlay */}
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: '100vh' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="fixed inset-0 bg-[#fcfaf2] z-40 flex flex-col items-center justify-center space-y-8 md:hidden overflow-hidden"
+                        >
+                            {navLinks.map((link, index) => (
+                                <motion.a
+                                    key={link.label}
+                                    href={link.href}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.1 * index }}
+                                    className="text-2xl font-bold text-gray-800 hover:text-[var(--color-kielo-purple)] transition-colors"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    {link.label}
+                                </motion.a>
+                            ))}
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </header>
 
             {/* Main Content Area */}
@@ -145,9 +187,9 @@ export const MinimalistHero = ({
                     transition={{ duration: 0.6, delay: 0.8 }}
                     className="z-20 order-2 flex flex-col items-center xl:items-start text-center xl:order-1 xl:text-left"
                 >
-                    <h1 className="text-4xl font-extrabold text-gray-700 md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl flex flex-col">
+                    <h1 className="text-3xl font-extrabold text-gray-700 md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-7xl flex flex-col">
                         {/* Part 1 */}
-                        <div className="flex flex-wrap items-baseline justify-center xl:justify-start">
+                        <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 xl:justify-start">
                             {typeof overlayText.part1 === 'object' && !Array.isArray(overlayText.part1) ? (
                                 <>
                                     {overlayText.part1.prefix && <span className="mr-2">{overlayText.part1.prefix}</span>}
@@ -184,7 +226,7 @@ export const MinimalistHero = ({
 
                         {/* Part 2 */}
                         {overlayText.part2 && (
-                            <div className="flex flex-wrap items-baseline justify-center xl:justify-start mt-1">
+                            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 xl:justify-start mt-2">
                                 {typeof overlayText.part2 === 'object' && !Array.isArray(overlayText.part2) ? (
                                     <>
                                         {overlayText.part2.prefix && <span className="mr-2">{overlayText.part2.prefix}</span>}
@@ -222,7 +264,7 @@ export const MinimalistHero = ({
 
                         {/* Part 3 */}
                         {overlayText.part3 && (
-                            <div className="flex flex-wrap items-baseline justify-center xl:justify-start mt-1">
+                            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 xl:justify-start mt-2">
                                 {typeof overlayText.part3 === 'object' && !Array.isArray(overlayText.part3) ? (
                                     <>
                                         {overlayText.part3.prefix && <span className="mr-2">{overlayText.part3.prefix}</span>}
@@ -259,7 +301,7 @@ export const MinimalistHero = ({
                         )}
                         {/* Part 4 */}
                         {overlayText.part4 && (
-                            <div className="flex flex-wrap items-baseline justify-center md:justify-start mt-1">
+                            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-start mt-2">
                                 {typeof overlayText.part4 === 'object' && !Array.isArray(overlayText.part4) ? (
                                     <>
                                         {overlayText.part4.prefix && <span className="mr-2">{overlayText.part4.prefix}</span>}

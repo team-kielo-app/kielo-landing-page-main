@@ -31,7 +31,7 @@ export default function Footer() {
 
     return (
         <footer className="w-full bg-[#fcfaf2] relative z-10 flex flex-col items-center px-4 md:px-8">
-            <div className="w-full max-w-[1280px] py-16 md:py-24 flex flex-col md:flex-row items-center justify-between gap-12 md:gap-16">
+            <div className="w-full max-w-[1280px] py-12 md:py-24 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
                 {/* Left Side: Mascot/QR Image */}
                 <div className="w-full md:w-1/2 flex justify-center md:justify-start">
                     <img
@@ -42,25 +42,25 @@ export default function Footer() {
                 </div>
 
                 {/* Right Side: Links */}
-                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-10 md:gap-16">
+                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-8 md:gap-16">
                     <div className="w-full flex justify-center md:justify-start">
-                        <SocialLinks socials={socials} className="md:justify-start" />
+                        <SocialLinks socials={socials} className="justify-center md:justify-start gap-6 md:gap-10" />
                     </div>
 
-                    <nav className="flex flex-col items-center md:items-start gap-4">
-                        <a href="/about" className="text-gray-600 hover:text-[var(--color-kielo-purple)] hover:underline font-bold text-2xl md:text-3xl transition-colors duration-200">About Us</a>
-                        <a href="/blog" className="text-gray-600 hover:text-[var(--color-kielo-purple)] hover:underline font-bold text-2xl md:text-3xl transition-colors duration-200">Blog</a>
+                    <nav className="flex flex-col items-center md:items-start gap-3 md:gap-4">
+                        <a href="/about" className="text-gray-600 hover:text-[var(--color-kielo-purple)] hover:underline font-bold text-xl md:text-3xl transition-colors duration-200">About Us</a>
+                        <a href="/blog" className="text-gray-600 hover:text-[var(--color-kielo-purple)] hover:underline font-bold text-xl md:text-3xl transition-colors duration-200">Blog</a>
                     </nav>
                 </div>
             </div>
 
             {/* Privacy Links - Centered */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pb-4 text-sm md:text-base font-medium">
-                <a href="/privacy" className="text-gray-500 hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200">Privacy</a>
-                <span className="text-gray-400">•</span>
-                <a href="/terms" className="text-gray-500 hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200">Terms</a>
-                <span className="text-gray-400">•</span>
-                <a href="/gdpr" className="text-gray-500 hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200">Personal Data & GDPR</a>
+            <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pb-8 mt-12 md:mt-0 text-sm md:text-base font-medium text-gray-500">
+                <a href="/privacy" className="hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200">Privacy</a>
+                <span className="opacity-50">•</span>
+                <a href="/terms" className="hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200">Terms</a>
+                <span className="opacity-50">•</span>
+                <a href="/gdpr" className="hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200">Personal Data & GDPR</a>
             </div>
 
             {/* Copyright - Centered at bottom */}

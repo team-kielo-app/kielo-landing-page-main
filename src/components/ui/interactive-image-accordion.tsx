@@ -142,8 +142,8 @@ export function LandingAccordionItem() {
 
     return (
         <div ref={sectionRef} className="bg-[#fcfaf2] font-sans flex justify-center" style={{ paddingTop: '0px' }}>
-            <section className="w-full max-w-[1280px] px-8 py-12 md:py-24">
-                <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-12">
+            <section className="w-full max-w-[1280px] px-4 md:px-8 py-16 md:py-24">
+                <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-12 md:gap-16">
 
                     {/* Right Side: Text Content */}
                     <div className="w-full md:w-1/2 text-center md:text-right">
