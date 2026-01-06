@@ -1,120 +1,120 @@
 .downloadCta {
-    background: #fcfaf2;
-    padding: 64px 20px;
-    position: relative;
-    overflow: hidden;
+  background: #fcfaf2;
+  padding: 64px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 @media (min-width: 768px) {
-    .downloadCta {
-        padding: 96px 32px;
-    }
+  .downloadCta {
+    padding: 96px 32px;
+  }
 }
 
 .container {
-    max-width: var(--container-max-width);
-    margin: 0 auto;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
 }
 
 .title {
-    text-align: center;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    font-weight: 800;
-    color: var(--color-kielo-purple);
-    margin-bottom: 32px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  text-align: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--color-kielo-purple);
+  margin-bottom: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .highlight {
-    color: var(--color-kielo-purple);
+  color: var(--color-kielo-purple);
 }
 
 .badges {
-    display: flex;
-    justify-content: center;
-    gap: 32px;
-    margin-bottom: 60px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .storeBadge {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: #000;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 10px;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #000;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  transition: transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .storeBadge:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
 
 .storeBadgeImage {
-    height: 75px;
-    width: auto;
-    transition: transform var(--transition-fast), filter var(--transition-fast), box-shadow var(--transition-fast);
-    cursor: pointer;
+  height: 75px;
+  width: auto;
+  transition: transform var(--transition-fast), filter var(--transition-fast),
+    box-shadow var(--transition-fast);
+  cursor: pointer;
 }
 
 .storeBadgeImage:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.1);
+  transform: translateY(-5px);
+  filter: brightness(1.1);
 }
-
 
 /* Sparkles */
 .sparkle1,
 .sparkle2,
 .sparkle3,
 .sparkle4 {
-    position: absolute;
-    color: var(--color-kielo-purple);
-    font-size: 16px;
-    animation: sparkle 2s ease-in-out infinite;
+  position: absolute;
+  color: var(--color-kielo-purple);
+  font-size: 16px;
+  animation: sparkle 2s ease-in-out infinite;
 }
 
 .sparkle1 {
-    top: 10%;
-    left: 10%;
-    font-size: 20px;
+  top: 10%;
+  left: 10%;
+  font-size: 20px;
 }
 
 .sparkle2 {
-    top: 20%;
-    right: 15%;
-    animation-delay: 0.4s;
+  top: 20%;
+  right: 15%;
+  animation-delay: 0.4s;
 }
 
 .sparkle3 {
-    bottom: 30%;
-    left: 20%;
-    animation-delay: 0.8s;
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 0.8s;
 }
 
 .sparkle4 {
-    bottom: 15%;
-    right: 10%;
-    animation-delay: 1.2s;
-    font-size: 14px;
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 1.2s;
+  font-size: 14px;
 }
 
 @keyframes sparkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 
-    0%,
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.3;
-        transform: scale(0.7);
-    }
+  50% {
+    opacity: 0.3;
+    transform: scale(0.7);
+  }
 }
+

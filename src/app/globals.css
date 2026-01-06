@@ -48,10 +48,25 @@
 }
 
 /* Base styles */
+/* Base styles */
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold mb-4;
+  }
+
+  p {
+    @apply mb-4;
+  }
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   border-color: var(--color-border);
 }
 
