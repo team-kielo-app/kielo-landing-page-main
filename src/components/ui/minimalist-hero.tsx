@@ -64,7 +64,7 @@ export const MinimalistHero = ({
 }: MinimalistHeroProps) => {
   const logoAltText = logoText ?? "Kielo Logo";
   const logoClassName = leftLogoSrc ? "h-12 md:h-auto" : "";
-  const logoStyle = leftLogoSrc ? { maxHeight: "120px" } : undefined;
+  const logoStyle = leftLogoSrc ? { maxHeight: "100px" } : undefined;
 
   return (
     <div

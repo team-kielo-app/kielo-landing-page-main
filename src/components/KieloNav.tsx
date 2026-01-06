@@ -56,7 +56,7 @@ export default function KieloNav({
   const shouldReduceMotion = useReducedMotion();
   const barTransition = shouldReduceMotion
     ? { duration: 0 }
-    : { duration: 0.22, ease: [0.4, 0, 0.2, 1] };
+    : { duration: 0.22, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] };
   const defaultNavLinks = [
     { label: "HOME", href: "/" },
     { label: "ABOUT", href: "/about" },
