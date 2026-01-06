@@ -48,6 +48,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicons/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
         <meta name="apple-mobile-web-app-title" content="Kielo" />
+        <meta property="og:logo" content="https://kielo.app/logo.png" />
         <link rel="manifest" href="/favicons/site.webmanifest" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
