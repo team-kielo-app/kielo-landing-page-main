@@ -70,7 +70,7 @@ export const MinimalistHero = ({
     <div
       className={cn(
         "relative flex w-full flex-col items-center justify-start overflow-hidden font-sans",
-        !height && "min-h-[80vh]",
+        !height && "min-h-[80vh] xl:min-h-[60vh]",
         className
       )}
       style={height ? { height } : undefined}
@@ -121,7 +121,7 @@ export const MinimalistHero = ({
             {/* Part 1 */}
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 xl:justify-start">
               {typeof overlayText.part1 === "object" &&
-              !Array.isArray(overlayText.part1) ? (
+                !Array.isArray(overlayText.part1) ? (
                 <>
                   {overlayText.part1.prefix && (
                     <span className="mr-2">{overlayText.part1.prefix}</span>
@@ -161,7 +161,7 @@ export const MinimalistHero = ({
             {overlayText.part2 && (
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 xl:justify-start mt-2">
                 {typeof overlayText.part2 === "object" &&
-                !Array.isArray(overlayText.part2) ? (
+                  !Array.isArray(overlayText.part2) ? (
                   <>
                     {overlayText.part2.prefix && (
                       <span className="mr-2">{overlayText.part2.prefix}</span>
@@ -206,7 +206,7 @@ export const MinimalistHero = ({
             {overlayText.part3 && (
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 xl:justify-start mt-2">
                 {typeof overlayText.part3 === "object" &&
-                !Array.isArray(overlayText.part3) ? (
+                  !Array.isArray(overlayText.part3) ? (
                   <>
                     {overlayText.part3.prefix && (
                       <span className="mr-2">{overlayText.part3.prefix}</span>
@@ -250,7 +250,7 @@ export const MinimalistHero = ({
             {overlayText.part4 && (
               <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-start mt-2">
                 {typeof overlayText.part4 === "object" &&
-                !Array.isArray(overlayText.part4) ? (
+                  !Array.isArray(overlayText.part4) ? (
                   <>
                     {overlayText.part4.prefix && (
                       <span className="mr-2">{overlayText.part4.prefix}</span>
