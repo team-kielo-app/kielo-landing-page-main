@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import KieloNav from "@/components/KieloNav";
 import Footer from "@/components/Footer";
 import { getBlogPost, getBlogPosts } from "@/lib/blog";
@@ -76,8 +77,15 @@ export default async function BlogPostPage({ params }: Props) {
                         </header>
 
                         {/* Content */}
-                        <div className="prose prose-slate prose-lg max-w-none prose-headings:text-[#374151] prose-headings:font-bold prose-p:text-[#374151] prose-a:text-[#898bdb] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#374151] prose-blockquote:border-l-[#898bdb] prose-blockquote:bg-[#fcfaf2] prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-code:text-[#898bdb] prose-code:bg-[#fcfaf2] prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-img:rounded-xl">
-                            <MDXRemote source={post.content} />
+                        <div className="prose prose-slate prose-lg max-w-none prose-headings:text-[#374151] prose-headings:font-bold prose-p:text-[#374151] prose-a:text-[#898bdb] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#374151] prose-blockquote:border-l-[#898bdb] prose-blockquote:bg-[#E8E4F8] prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg prose-code:text-[#898bdb] prose-code:bg-[#E8E4F8] prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none prose-img:rounded-xl prose-li:marker:text-[#898bdb] prose-th:text-[#374151] prose-hr:border-[#898bdb]/30">
+                            <MDXRemote
+                                source={post.content}
+                                options={{
+                                    mdxOptions: {
+                                        remarkPlugins: [remarkGfm],
+                                    },
+                                }}
+                            />
                         </div>
 
                         {/* Footer */}
