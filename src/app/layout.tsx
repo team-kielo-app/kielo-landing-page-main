@@ -74,6 +74,8 @@ export const metadata: Metadata = {
   },
 };
 
+import Script from "next/script";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -82,6 +84,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="page-wrapper" suppressHydrationWarning>
+        {/* Google tag (gtag.js) */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-6GC078XYTF"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+        >
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-6GC078XYTF');
+          `}
+        </Script>
         {children}
       </body>
     </html>
