@@ -84,6 +84,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="page-wrapper" suppressHydrationWarning>
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="698f95ac-bf4c-4ef1-8d44-6fa601b23fb1"
+          type="text/javascript"
+          strategy="beforeInteractive"
+        />
         {/* Google tag (gtag.js) */}
         <Script
           strategy="afterInteractive"
