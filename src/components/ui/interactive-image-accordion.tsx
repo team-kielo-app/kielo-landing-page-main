@@ -52,9 +52,10 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
   return (
     <div
       className={`
-        relative h-[450px] rounded-2xl overflow-hidden cursor-pointer border-2 border-[var(--color-kielo-purple)] bg-[var(--color-kielo-purple)]
+        relative rounded-2xl overflow-hidden cursor-pointer border-2 border-[var(--color-kielo-purple)] bg-[var(--color-kielo-purple)]
         transition-all duration-700 ease-in-out
-        ${isActive ? "w-[400px]" : "w-[60px]"}
+        h-[280px] sm:h-[350px] md:h-[450px]
+        ${isActive ? "w-[180px] sm:w-[280px] md:w-[400px]" : "w-[50px] sm:w-[55px] md:w-[60px]"}
       `}
       onMouseEnter={onMouseEnter}
     >
@@ -74,13 +75,12 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
       {/* Caption Text */}
       <span
         className={`
-          absolute text-[#fffefa] text-2xl font-bold whitespace-nowrap
+          absolute text-[#fffefa] font-bold whitespace-nowrap
           transition-all duration-300 ease-in-out
-          ${
-            isActive
-              ? "bottom-2 left-1/2 -translate-x-1/2 rotate-0" // Active state: bottom-center, pushed lower
-              : // Inactive state: centered vertically, rotated
-                "w-auto text-left top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90"
+          text-sm sm:text-lg md:text-2xl
+          ${isActive
+            ? "bottom-2 left-1/2 -translate-x-1/2 rotate-0"
+            : "w-auto text-left top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90 origin-center"
           }
         `}
       >

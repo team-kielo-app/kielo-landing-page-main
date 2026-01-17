@@ -1,5 +1,13 @@
 import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-bricolage",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -83,7 +91,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="page-wrapper" suppressHydrationWarning>
+      <body className={`${bricolage.variable} ${bricolage.className} page-wrapper`} suppressHydrationWarning>
         <Script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
