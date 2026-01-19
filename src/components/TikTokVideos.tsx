@@ -18,6 +18,7 @@ const videos: VideoItem[] = [
 export default function TikTokVideos() {
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
     const [playingStates, setPlayingStates] = useState<boolean[]>(videos.map(() => false));
+    const [posterUrls, setPosterUrls] = useState<string[]>(videos.map(() => ''));
 
     const playVideo = (index: number) => {
         const video = videoRefs.current[index];
@@ -81,6 +82,31 @@ export default function TikTokVideos() {
         }
     };
 
+    const generatePoster = (index: number) => {
+        const video = videoRefs.current[index];
+        if (!video || posterUrls[index]) return; // Skip if already generated
+
+        try {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+
+            if (ctx) {
+                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                const posterUrl = canvas.toDataURL('image/jpeg', 0.8);
+
+                setPosterUrls(prev => {
+                    const newUrls = [...prev];
+                    newUrls[index] = posterUrl;
+                    return newUrls;
+                });
+            }
+        } catch (err) {
+            console.error('Failed to generate poster:', err);
+        }
+    };
+
     return (
         <section className={styles.tiktokSection}>
             <div className={styles.container}>
@@ -102,10 +128,11 @@ export default function TikTokVideos() {
                                     ref={(el) => { videoRefs.current[index] = el; }}
                                     className={styles.video}
                                     src={video.src}
-                                    poster={video.poster}
+                                    poster={posterUrls[index] || video.poster}
                                     loop
                                     playsInline
                                     preload="metadata"
+                                    onLoadedData={() => generatePoster(index)}
                                 />
                                 {!playingStates[index] && (
                                     <div className={styles.playOverlay}>
