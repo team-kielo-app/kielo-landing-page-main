@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import { LandingAccordionItem } from '@/components/ui/interactive-image-accordion';
+import TikTokVideos from "@/components/TikTokVideos";
 import DownloadCTA from "@/components/DownloadCTA";
 import Footer from "@/components/Footer";
 
@@ -12,6 +13,7 @@ export default function Home() {
         <BackgroundSparkles />
         <Hero />
         <LandingAccordionItem />
+        <TikTokVideos />
         <DownloadCTA />
       </main>
       <Footer />
