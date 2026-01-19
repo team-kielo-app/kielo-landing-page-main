@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import styles from './TikTokVideos.module.css';
 
 interface VideoItem {
@@ -17,26 +17,67 @@ const videos: VideoItem[] = [
 
 export default function TikTokVideos() {
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+    const [playingStates, setPlayingStates] = useState<boolean[]>(videos.map(() => false));
 
-    const handleMouseEnter = (index: number) => {
+    const playVideo = (index: number) => {
         const video = videoRefs.current[index];
         if (video) {
             // First try playing with sound
             video.muted = false;
-            video.play().catch(() => {
-                // If browser blocks unmuted play, play muted as fallback
-                video.muted = true;
-                video.play().catch(err => console.error("Video play failed:", err));
-            });
+            video.play()
+                .then(() => {
+                    setPlayingStates(prev => {
+                        const newStates = [...prev];
+                        newStates[index] = true;
+                        return newStates;
+                    });
+                })
+                .catch(() => {
+                    // If browser blocks unmuted play, play muted as fallback
+                    video.muted = true;
+                    video.play()
+                        .then(() => {
+                            setPlayingStates(prev => {
+                                const newStates = [...prev];
+                                newStates[index] = true;
+                                return newStates;
+                            });
+                        })
+                        .catch(err => console.error("Video play failed:", err));
+                });
         }
     };
 
-    const handleMouseLeave = (index: number) => {
+    const pauseVideo = (index: number) => {
         const video = videoRefs.current[index];
         if (video) {
             video.pause();
             video.currentTime = 0;
-            video.muted = true; // Reset to muted for next hover
+            video.muted = true; // Reset to muted for next play
+            setPlayingStates(prev => {
+                const newStates = [...prev];
+                newStates[index] = false;
+                return newStates;
+            });
+        }
+    };
+
+    const handleMouseEnter = (index: number) => {
+        const video = videoRefs.current[index];
+        if (video && !playingStates[index]) {
+            playVideo(index);
+        }
+    };
+
+    const handleMouseLeave = (index: number) => {
+        pauseVideo(index);
+    };
+
+    const handleClick = (index: number) => {
+        if (playingStates[index]) {
+            pauseVideo(index);
+        } else {
+            playVideo(index);
         }
     };
 
@@ -54,6 +95,7 @@ export default function TikTokVideos() {
                             className={styles.videoCard}
                             onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={() => handleMouseLeave(index)}
+                            onClick={() => handleClick(index)}
                         >
                             <div className={styles.videoWrapper}>
                                 <video
@@ -65,15 +107,17 @@ export default function TikTokVideos() {
                                     playsInline
                                     preload="metadata"
                                 />
-                                <div className={styles.playOverlay}>
-                                    <svg
-                                        className={styles.playIcon}
-                                        viewBox="0 0 24 24"
-                                        fill="currentColor"
-                                    >
-                                        <path d="M8 5v14l11-7z" />
-                                    </svg>
-                                </div>
+                                {!playingStates[index] && (
+                                    <div className={styles.playOverlay}>
+                                        <svg
+                                            className={styles.playIcon}
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                        >
+                                            <path d="M8 5v14l11-7z" />
+                                        </svg>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}
