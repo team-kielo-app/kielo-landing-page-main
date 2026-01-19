@@ -10,15 +10,25 @@ interface VideoItem {
 
 // Replace these with your actual TikTok video URLs (mp4 format)
 const videos: VideoItem[] = [
-    { src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_metsa%CC%88.mp4' },
-    { src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_yleensa%CC%88.mp4' },
-    { src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_ta%CC%88rkea%CC%88.mp4' },
+    {
+        src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_metsa%CC%88.mp4',
+        poster: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_metsa%CC%88_poster.jpg'
+    },
+    {
+        src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_yleensa%CC%88.mp4',
+        poster: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_yleensa%CC%88_poster.jpg'
+    },
+    {
+        src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_ta%CC%88rkea%CC%88.mp4',
+        poster: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_ta%CC%88rkea%CC%88_poster.jpg'
+    },
 ];
 
 export default function TikTokVideos() {
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
     const [playingStates, setPlayingStates] = useState<boolean[]>(videos.map(() => false));
     const [posterUrls, setPosterUrls] = useState<string[]>(videos.map(() => ''));
+    const [posterLoadErrors, setPosterLoadErrors] = useState<boolean[]>(videos.map(() => false));
 
     const playVideo = (index: number) => {
         const video = videoRefs.current[index];
@@ -86,24 +96,55 @@ export default function TikTokVideos() {
         const video = videoRefs.current[index];
         if (!video || posterUrls[index]) return; // Skip if already generated
 
-        try {
-            const canvas = document.createElement('canvas');
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            const ctx = canvas.getContext('2d');
+        // Wait a bit to ensure video has loaded enough data
+        const attemptGeneration = () => {
+            try {
+                if (video.videoWidth === 0 || video.videoHeight === 0) {
+                    // Video dimensions not ready, try again after a short delay
+                    setTimeout(attemptGeneration, 100);
+                    return;
+                }
 
-            if (ctx) {
-                ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                const posterUrl = canvas.toDataURL('image/jpeg', 0.8);
+                const canvas = document.createElement('canvas');
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                const ctx = canvas.getContext('2d');
 
-                setPosterUrls(prev => {
-                    const newUrls = [...prev];
-                    newUrls[index] = posterUrl;
-                    return newUrls;
-                });
+                if (ctx) {
+                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+                    const posterUrl = canvas.toDataURL('image/jpeg', 0.8);
+
+                    setPosterUrls(prev => {
+                        const newUrls = [...prev];
+                        newUrls[index] = posterUrl;
+                        return newUrls;
+                    });
+                }
+            } catch (err) {
+                console.error('Failed to generate poster:', err);
             }
-        } catch (err) {
-            console.error('Failed to generate poster:', err);
+        };
+
+        attemptGeneration();
+    };
+
+    const handlePosterError = (index: number) => {
+        // Mark this poster as failed and try to generate from video
+        setPosterLoadErrors(prev => {
+            const newErrors = [...prev];
+            newErrors[index] = true;
+            return newErrors;
+        });
+
+        // Attempt to generate a poster from the video
+        const video = videoRefs.current[index];
+        if (video) {
+            // Ensure video has loaded metadata before generating poster
+            if (video.readyState >= 2) {
+                generatePoster(index);
+            } else {
+                video.addEventListener('loadeddata', () => generatePoster(index), { once: true });
+            }
         }
     };
 
@@ -128,12 +169,29 @@ export default function TikTokVideos() {
                                     ref={(el) => { videoRefs.current[index] = el; }}
                                     className={styles.video}
                                     src={video.src}
-                                    poster={posterUrls[index] || video.poster}
+                                    poster={posterLoadErrors[index] ? posterUrls[index] : (video.poster || posterUrls[index])}
                                     loop
                                     playsInline
-                                    preload="metadata"
-                                    onLoadedData={() => generatePoster(index)}
+                                    preload="auto"
+                                    onLoadedData={() => {
+                                        // Generate fallback poster if no hosted poster or if it failed to load
+                                        if (!video.poster || posterLoadErrors[index]) {
+                                            generatePoster(index);
+                                        }
+                                    }}
+                                    onError={() => {
+                                        // Handle poster loading errors
+                                        handlePosterError(index);
+                                    }}
                                 />
+                                {video.poster && !posterLoadErrors[index] && (
+                                    <img
+                                        src={video.poster}
+                                        alt=""
+                                        style={{ display: 'none' }}
+                                        onError={() => handlePosterError(index)}
+                                    />
+                                )}
                                 {!playingStates[index] && (
                                     <div className={styles.playOverlay}>
                                         <svg
