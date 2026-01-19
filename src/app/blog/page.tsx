@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import KieloNav from "@/components/KieloNav";
 import Footer from "@/components/Footer";
 import { getBlogPosts } from "@/lib/blog";
@@ -35,19 +36,30 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="bg-white rounded-2xl shadow-sm p-6 hover:shadow-md transition-shadow duration-200 border border-transparent hover:border-[#898bdb]/30 group"
+                  className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-200 border border-transparent hover:border-[#898bdb]/30 group flex flex-col h-full"
                 >
-                  <article>
+                  {post.frontmatter.image && (
+                    <div className="relative w-full aspect-video">
+                      <Image
+                        src={post.frontmatter.image}
+                        alt={post.frontmatter.image_alt || post.frontmatter.title}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                  )}
+                  <article className="p-6 flex-1 flex flex-col">
                     <div className="text-sm text-[#898bdb] mb-2 font-medium">
                       {post.frontmatter.date}
                     </div>
-                    <h2 className="text-xl font-bold text-[#374151] mb-2 group-hover:text-[#898bdb] transition-colors">
+                    <h2 className="text-xl font-bold text-[#374151] mb-2 group-hover:text-[#898bdb] transition-colors line-clamp-2">
                       {post.frontmatter.title}
                     </h2>
-                    <p className="text-[#6B7280] line-clamp-3">
+                    <p className="text-[#6B7280] line-clamp-3 mb-4 flex-1">
                       {post.frontmatter.description}
                     </p>
-                    <div className="mt-4 text-[#898bdb] font-medium text-sm flex items-center">
+                    <div className="mt-auto text-[#898bdb] font-medium text-sm flex items-center">
                       Read more <span className="ml-1">→</span>
                     </div>
                   </article>

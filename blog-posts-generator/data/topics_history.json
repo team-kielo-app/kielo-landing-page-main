@@ -1,6 +1,7 @@
 {
   "used_topics": [
-    "\"Mustikka-aika! Berry Picking Basics for Beginners\""
+    "\"Mustikka-aika! Berry Picking Basics for Beginners\"",
+    "\"Torilla Tavataan! A Beginner's Guide to Finnish Market Culture\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -20,6 +21,24 @@
         ]
       },
       "recorded_at": "2026-01-19T17:01:36.262962"
+    },
+    "\"Torilla Tavataan! A Beginner's Guide to Finnish Market Culture\"": {
+      "date": "2026-01-21",
+      "category": "Finnish Culture and Traditions",
+      "metadata": {
+        "title": "Torilla Tavataan! Finnish Market Culture: A Beginner's Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Torilla Tavataan",
+          "Finnish Culture",
+          "Market Culture",
+          "Visit Finland",
+          "Finnish Language",
+          "Travel",
+          "Traditions]"
+        ]
+      },
+      "recorded_at": "2026-01-19T17:15:12.634004"
     }
   }
 }
