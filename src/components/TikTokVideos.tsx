@@ -5,66 +5,41 @@ import styles from './TikTokVideos.module.css';
 
 interface VideoItem {
     src: string;
-    poster?: string;
 }
 
-// Replace these with your actual TikTok video URLs (mp4 format)
+// Video sources
 const videos: VideoItem[] = [
-    {
-        src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_metsa%CC%88.mp4',
-        poster: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_metsa%CC%88_poster.jpg'
-    },
-    {
-        src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_yleensa%CC%88.mp4',
-        poster: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_yleensa%CC%88_poster.jpg'
-    },
-    {
-        src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_ta%CC%88rkea%CC%88.mp4',
-        poster: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_ta%CC%88rkea%CC%88_poster.jpg'
-    },
+    { src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_metsa%CC%88.mp4' },
+    { src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_yleensa%CC%88.mp4' },
+    { src: 'https://storage.googleapis.com/kielo-social-media/social_media_daily_vocab_fi_ta%CC%88rkea%CC%88.mp4' },
 ];
 
 export default function TikTokVideos() {
     const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
     const [playingStates, setPlayingStates] = useState<boolean[]>(videos.map(() => false));
-    const [posterUrls, setPosterUrls] = useState<string[]>(videos.map(() => ''));
-    const [posterLoadErrors, setPosterLoadErrors] = useState<boolean[]>(videos.map(() => false));
 
     const playVideo = (index: number) => {
         const video = videoRefs.current[index];
-        if (video) {
-            // First try playing with sound
-            video.muted = false;
-            video.play()
-                .then(() => {
-                    setPlayingStates(prev => {
-                        const newStates = [...prev];
-                        newStates[index] = true;
-                        return newStates;
-                    });
-                })
-                .catch(() => {
-                    // If browser blocks unmuted play, play muted as fallback
-                    video.muted = true;
-                    video.play()
-                        .then(() => {
-                            setPlayingStates(prev => {
-                                const newStates = [...prev];
-                                newStates[index] = true;
-                                return newStates;
-                            });
-                        })
-                        .catch(err => console.error("Video play failed:", err));
+        if (!video) return;
+
+        // Click is a direct user interaction, so we can unmute safely
+        video.muted = false;
+
+        video.play()
+            .then(() => {
+                setPlayingStates(prev => {
+                    const newStates = [...prev];
+                    newStates[index] = true;
+                    return newStates;
                 });
-        }
+            })
+            .catch(err => console.error("Video play failed:", err));
     };
 
     const pauseVideo = (index: number) => {
         const video = videoRefs.current[index];
         if (video) {
             video.pause();
-            video.currentTime = 0;
-            video.muted = true; // Reset to muted for next play
             setPlayingStates(prev => {
                 const newStates = [...prev];
                 newStates[index] = false;
@@ -73,78 +48,17 @@ export default function TikTokVideos() {
         }
     };
 
-    const handleMouseEnter = (index: number) => {
-        const video = videoRefs.current[index];
-        if (video && !playingStates[index]) {
-            playVideo(index);
-        }
-    };
-
-    const handleMouseLeave = (index: number) => {
-        pauseVideo(index);
-    };
-
     const handleClick = (index: number) => {
         if (playingStates[index]) {
             pauseVideo(index);
         } else {
+            // Pause all other videos before playing this one
+            playingStates.forEach((isPlaying, i) => {
+                if (isPlaying && i !== index) {
+                    pauseVideo(i);
+                }
+            });
             playVideo(index);
-        }
-    };
-
-    const generatePoster = (index: number) => {
-        const video = videoRefs.current[index];
-        if (!video || posterUrls[index]) return; // Skip if already generated
-
-        // Wait a bit to ensure video has loaded enough data
-        const attemptGeneration = () => {
-            try {
-                if (video.videoWidth === 0 || video.videoHeight === 0) {
-                    // Video dimensions not ready, try again after a short delay
-                    setTimeout(attemptGeneration, 100);
-                    return;
-                }
-
-                const canvas = document.createElement('canvas');
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                const ctx = canvas.getContext('2d');
-
-                if (ctx) {
-                    ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-                    const posterUrl = canvas.toDataURL('image/jpeg', 0.8);
-
-                    setPosterUrls(prev => {
-                        const newUrls = [...prev];
-                        newUrls[index] = posterUrl;
-                        return newUrls;
-                    });
-                }
-            } catch (err) {
-                console.error('Failed to generate poster:', err);
-            }
-        };
-
-        attemptGeneration();
-    };
-
-    const handlePosterError = (index: number) => {
-        // Mark this poster as failed and try to generate from video
-        setPosterLoadErrors(prev => {
-            const newErrors = [...prev];
-            newErrors[index] = true;
-            return newErrors;
-        });
-
-        // Attempt to generate a poster from the video
-        const video = videoRefs.current[index];
-        if (video) {
-            // Ensure video has loaded metadata before generating poster
-            if (video.readyState >= 2) {
-                generatePoster(index);
-            } else {
-                video.addEventListener('loadeddata', () => generatePoster(index), { once: true });
-            }
         }
     };
 
@@ -160,8 +74,6 @@ export default function TikTokVideos() {
                         <div
                             key={index}
                             className={styles.videoCard}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={() => handleMouseLeave(index)}
                             onClick={() => handleClick(index)}
                         >
                             <div className={styles.videoWrapper}>
@@ -169,29 +81,12 @@ export default function TikTokVideos() {
                                     ref={(el) => { videoRefs.current[index] = el; }}
                                     className={styles.video}
                                     src={video.src}
-                                    poster={posterLoadErrors[index] ? posterUrls[index] : (video.poster || posterUrls[index])}
                                     loop
                                     playsInline
-                                    preload="auto"
-                                    onLoadedData={() => {
-                                        // Generate fallback poster if no hosted poster or if it failed to load
-                                        if (!video.poster || posterLoadErrors[index]) {
-                                            generatePoster(index);
-                                        }
-                                    }}
-                                    onError={() => {
-                                        // Handle poster loading errors
-                                        handlePosterError(index);
-                                    }}
+                                    muted
+                                    preload="metadata"
                                 />
-                                {video.poster && !posterLoadErrors[index] && (
-                                    <img
-                                        src={video.poster}
-                                        alt=""
-                                        style={{ display: 'none' }}
-                                        onError={() => handlePosterError(index)}
-                                    />
-                                )}
+
                                 {!playingStates[index] && (
                                     <div className={styles.playOverlay}>
                                         <svg

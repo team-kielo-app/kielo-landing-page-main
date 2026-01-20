@@ -83,6 +83,13 @@
     object-fit: cover;
 }
 
+.posterPlaceholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(137, 139, 219, 0.4) 0%, rgba(137, 139, 219, 0.6) 100%);
+    z-index: 1;
+}
+
 .playOverlay {
     position: absolute;
     inset: 0;
