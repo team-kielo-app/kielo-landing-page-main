@@ -1,7 +1,10 @@
 {
   "used_topics": [
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"",
-    "\"Torilla Tavataan! A Beginner's Guide to Finnish Market Culture\""
+    "\"Torilla Tavataan! A Beginner's Guide to Finnish Market Culture\"",
+    "Sää on Puheenaihe! Talking About the Weather in Finland",
+    "Mökille! Planning Your First Finnish Summer Cottage Trip",
+    "Ruokatauko! Ordering Coffee and a Korvapuusti Like a Finn"
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -39,6 +42,58 @@
         ]
       },
       "recorded_at": "2026-01-19T17:15:12.634004"
+    },
+    "Sää on Puheenaihe! Talking About the Weather in Finland": {
+      "date": "2026-01-23",
+      "category": "Finnish Lifestyle and Society",
+      "metadata": {
+        "title": "Sää on Puheenaihe! Weather Talk in Finland",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Weather",
+          "Finland",
+          "Language Learning",
+          "Travel",
+          "Lifestyle",
+          "Sää]"
+        ]
+      },
+      "recorded_at": "2026-01-22T14:38:28.516375"
+    },
+    "Mökille! Planning Your First Finnish Summer Cottage Trip": {
+      "date": "2026-01-24",
+      "category": "Travel and Tourism in Finland",
+      "metadata": {
+        "title": "Mökille! Planning Your First Finnish Summer Cottage Trip",
+        "level": "A1-A2",
+        "tags": [
+          "[Mökille",
+          "Finnish Culture",
+          "Summer Cottage",
+          "Visit Finland",
+          "Finnish Language",
+          "Travel]"
+        ]
+      },
+      "recorded_at": "2026-01-22T14:47:35.673097"
+    },
+    "Ruokatauko! Ordering Coffee and a Korvapuusti Like a Finn": {
+      "date": "2026-01-25",
+      "category": "Finnish Food and Dining",
+      "metadata": {
+        "title": "Ruokatauko! Ordering Coffee & Korvapuusti Like a Finn",
+        "level": "A1-A2",
+        "tags": [
+          "[Ruokatauko",
+          "Finnish Culture",
+          "Visit Finland",
+          "Finnish Food",
+          "Korvapuusti",
+          "Finnish Language]"
+        ]
+      },
+      "recorded_at": "2026-01-22T14:48:37.512672"
     }
   }
 }
