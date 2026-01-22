@@ -72,8 +72,8 @@ def generate_image(
 
 Image description: {prompt}
 
-Context: This is for a Finnish language learning blog. The scene should feel warm, 
-inviting, and connected to Finnish culture or nature where appropriate.
+Context: A scenic illustration for a blog about Finland.
+CONSTRAINT: The image must be a PURE VISUAL SCENE. Do NOT include any text, grammar charts, vocabulary lists, or speech bubbles.
 """
     
     try:

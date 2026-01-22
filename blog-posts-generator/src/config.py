@@ -34,8 +34,9 @@ IMAGE_ASPECT_RATIO = "16:9"
 # Illustration style for consistent image generation
 ILLUSTRATION_STYLE = """High-quality digital vector art. Flat aesthetic with clean shapes and soft, harmonious colors. 
 Minimalist and modern. 
-CRITICAL: NO TEXT, NO WRITE-UPS, NO COLOR PALETTES, NO UI ELEMENTS, NO PHOTOREALISM. 
-Purely visual illustration suitable for a high-end blog."""
+IMPORTANT: This must be a PURE SCENE illustration only. 
+DO NOT include any text, letters, captions, annotations, color palettes, style guides, or UI elements.
+DO NOT make an infographic. The image must contain ONLY the visual scene described."""
 
 # Finnish level settings
 FINNISH_LEVELS = ["A1", "A2"]
