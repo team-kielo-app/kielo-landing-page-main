@@ -58,6 +58,20 @@ python3 main.py generate --days 7
 python3 main.py topics --list
 ```
 
+### Regenerate faulty images
+
+**Interactive mode** - list all images and select which to regenerate:
+```bash
+python3 main.py regenerate-image --list
+```
+
+**Single file mode** - regenerate a specific image:
+```bash
+python3 main.py regenerate-image --file 2026-01-26-linnanmaki-img1.webp
+```
+
+The command extracts the original prompt from the MDX file's alt text and regenerates the image.
+
 ## Output
 
 Blog posts are generated directly into the main app's public directory:
@@ -65,6 +79,6 @@ Blog posts are generated directly into the main app's public directory:
 ../public/blogs/
 ├── 2026-01-14-finnish-greetings.mdx
 └── images/
-    ├── 2026-01-14-finnish-greetings.png
+    ├── 2026-01-14-finnish-greetings.webp
     └── ...
 ```

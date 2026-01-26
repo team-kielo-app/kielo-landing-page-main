@@ -10,12 +10,53 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional
 
+import re
+
 from src.config import OUTPUT_DIR, IMAGES_DIR
 
 from src.topic_manager import TopicManager
 from src.blog_generator import generate_topic_suggestion, generate_blog_post
-from src.image_generator import generate_blog_header_image, parse_image_markers, generate_blog_images
+from src.image_generator import generate_blog_header_image, parse_image_markers, generate_blog_images, generate_image
 from src.mdx_formatter import create_mdx_file, preview_post
+
+
+def find_image_prompt_in_mdx(image_filename: str) -> Optional[str]:
+    """
+    Search all MDX files to find the alt text (prompt) for a given image filename.
+    
+    Args:
+        image_filename: The image filename (e.g., '2026-01-26-linnanmaki-img1.webp')
+    
+    Returns:
+        The alt text/prompt if found, None otherwise
+    """
+    # Search all MDX files in OUTPUT_DIR
+    for mdx_file in OUTPUT_DIR.glob("*.mdx"):
+        content = mdx_file.read_text(encoding='utf-8')
+        
+        # Pattern to match: ![alt text](/blogs/images/filename)
+        # We need to escape special characters in filename for regex
+        escaped_filename = re.escape(image_filename)
+        pattern = rf'!\[([^\]]+)\]\([^)]*{escaped_filename}\)'
+        
+        match = re.search(pattern, content)
+        if match:
+            return match.group(1)
+    
+    return None
+
+
+def list_all_images() -> list:
+    """List all images in the images directory with their prompts."""
+    images = []
+    for image_path in sorted(IMAGES_DIR.glob("*.webp")):
+        prompt = find_image_prompt_in_mdx(image_path.name)
+        images.append({
+            'filename': image_path.name,
+            'path': image_path,
+            'prompt': prompt
+        })
+    return images
 
 
 @click.group()
@@ -273,6 +314,115 @@ def status():
         click.echo(f"\n📄 Recent posts:")
         for f in recent:
             click.echo(f"   • {f.name}")
+
+
+@cli.command('regenerate-image')
+@click.option('--file', '-f', 'filename', type=str, help='Image filename to regenerate.')
+@click.option('--list', '-l', 'list_images', is_flag=True, help='List all images and select which to regenerate.')
+def regenerate_image(filename: Optional[str], list_images: bool):
+    """Regenerate one or more blog post images."""
+    
+    if list_images:
+        # Interactive mode: list all images and let user select
+        click.echo("\n🖼️  Scanning images...")
+        images = list_all_images()
+        
+        if not images:
+            click.echo("No images found in the images directory.")
+            return
+        
+        click.echo(f"\n📋 Found {len(images)} images:\n")
+        for i, img in enumerate(images, 1):
+            prompt_preview = (img['prompt'][:60] + '...') if img['prompt'] and len(img['prompt']) > 60 else (img['prompt'] or '❓ No prompt found')
+            click.echo(f"  [{i:2d}] {img['filename']}")
+            click.echo(f"       {prompt_preview}")
+        
+        click.echo("\n")
+        selection = click.prompt(
+            "Enter image number(s) to regenerate (comma-separated, e.g., '1,3,5') or 'q' to quit",
+            type=str
+        )
+        
+        if selection.lower() == 'q':
+            click.echo("Cancelled.")
+            return
+        
+        # Parse selection
+        try:
+            indices = [int(x.strip()) - 1 for x in selection.split(',')]
+            selected_images = [images[i] for i in indices if 0 <= i < len(images)]
+        except (ValueError, IndexError):
+            click.echo("❌ Invalid selection.")
+            return
+        
+        if not selected_images:
+            click.echo("❌ No valid images selected.")
+            return
+        
+        click.echo(f"\n🔄 Regenerating {len(selected_images)} image(s)...\n")
+        
+        for img in selected_images:
+            if not img['prompt']:
+                click.echo(f"⚠️  Skipping {img['filename']} - no prompt found in MDX files")
+                continue
+            
+            click.echo(f"🎨 Regenerating: {img['filename']}")
+            click.echo(f"   Prompt: {img['prompt'][:80]}...")
+            
+            # Extract filename without extension
+            filename_stem = img['path'].stem
+            
+            # Regenerate
+            result = generate_image(img['prompt'], filename_stem)
+            
+            if result:
+                click.echo(f"   ✅ Success: {result.name}")
+            else:
+                click.echo(f"   ❌ Failed to regenerate")
+        
+        click.echo("\n✨ Done!")
+        
+    elif filename:
+        # Single file mode
+        image_path = IMAGES_DIR / filename
+        
+        if not image_path.exists():
+            click.echo(f"❌ Image not found: {filename}")
+            click.echo(f"   Looked in: {IMAGES_DIR}")
+            return
+        
+        # Find the prompt
+        prompt = find_image_prompt_in_mdx(filename)
+        
+        if not prompt:
+            click.echo(f"❌ Could not find prompt for: {filename}")
+            click.echo("   The image might not be referenced in any MDX file.")
+            return
+        
+        click.echo(f"\n🖼️  Image: {filename}")
+        click.echo(f"📝 Prompt: {prompt}")
+        
+        if not click.confirm("\nRegenerate this image?"):
+            click.echo("Cancelled.")
+            return
+        
+        click.echo("\n🎨 Regenerating...")
+        
+        # Extract filename without extension
+        filename_stem = image_path.stem
+        
+        result = generate_image(prompt, filename_stem)
+        
+        if result:
+            click.echo(f"✅ Success! New image saved: {result.name}")
+        else:
+            click.echo("❌ Image generation failed.")
+    
+    else:
+        click.echo("Please specify --file <filename> or use --list to see all images.")
+        click.echo("\nExamples:")
+        click.echo("  python main.py regenerate-image --list")
+        click.echo("  python main.py regenerate-image --file 2026-01-26-linnanmaki-img1.webp")
 
 
 if __name__ == "__main__":

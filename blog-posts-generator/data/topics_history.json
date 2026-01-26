@@ -4,7 +4,14 @@
     "\"Torilla Tavataan! A Beginner's Guide to Finnish Market Culture\"",
     "Sää on Puheenaihe! Talking About the Weather in Finland",
     "Mökille! Planning Your First Finnish Summer Cottage Trip",
-    "Ruokatauko! Ordering Coffee and a Korvapuusti Like a Finn"
+    "Ruokatauko! Ordering Coffee and a Korvapuusti Like a Finn",
+    "Linnanmäki! A Beginner's Guide to Finland's Favorite Amusement Park",
+    "Juhannus Taikaa: Celebrating Midsummer in Finland!",
+    "Bussilla Matkalle! A Beginner's Guide to Using Public Transport in Finland",
+    "Retkelle! Packing a Finnish Day Trip Backpack",
+    "\"Joulu on Tulossa! Getting Ready for Christmas in Finland\"",
+    "\"Päiväkahvit! Taking a Fika Break the Finnish Way\"",
+    "Tervetuloa Kylään! Finnish Guest Etiquette"
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -94,6 +101,129 @@
         ]
       },
       "recorded_at": "2026-01-22T14:48:37.512672"
+    },
+    "Linnanmäki! A Beginner's Guide to Finland's Favorite Amusement Park": {
+      "date": "2026-01-26",
+      "category": "Travel and Tourism in Finland",
+      "metadata": {
+        "title": "Linnanmäki! A Beginner's Guide to Finland's Favorite Amusement Park",
+        "level": "A1-A2",
+        "tags": [
+          "[Linnanmäki",
+          "Amusement Park",
+          "Finnish Culture",
+          "Visit Finland",
+          "Helsinki",
+          "Travel",
+          "Family Fun]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:50:25.582767"
+    },
+    "Juhannus Taikaa: Celebrating Midsummer in Finland!": {
+      "date": "2026-01-27",
+      "category": "Finnish Culture and Traditions",
+      "metadata": {
+        "title": "Juhannus Taikaa: Celebrate Finnish Midsummer!",
+        "level": "A1-A2",
+        "tags": [
+          "[Juhannus",
+          "Finnish Culture",
+          "Midsummer",
+          "Visit Finland",
+          "Finnish Traditions",
+          "Summer Solstice]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:51:05.035730"
+    },
+    "Bussilla Matkalle! A Beginner's Guide to Using Public Transport in Finland": {
+      "date": "2026-01-28",
+      "category": "Finnish Lifestyle and Society",
+      "metadata": {
+        "title": "Bussilla Matkalle! Public Transport Guide in Finland",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Public Transport",
+          "Finland Travel",
+          "Travel Guide",
+          "Finnish Language",
+          "Bussilla Matkalle",
+          "Visit Finland]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:51:51.471082"
+    },
+    "Retkelle! Packing a Finnish Day Trip Backpack": {
+      "date": "2026-01-29",
+      "category": "Finnish Lifestyle and Society",
+      "metadata": {
+        "title": "Retkelle! Packing a Finnish Day Trip Backpack for Adventure",
+        "level": "A1-A2",
+        "tags": [
+          "[Retkelle! Packing a Finnish Day Trip Backpack",
+          "Finnish Culture",
+          "Visit Finland",
+          "Finnish Lifestyle",
+          "Day Trip",
+          "Finland",
+          "Travel]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:52:38.787178"
+    },
+    "\"Joulu on Tulossa! Getting Ready for Christmas in Finland\"": {
+      "date": "2026-01-30",
+      "category": "Finnish Culture and Traditions",
+      "metadata": {
+        "title": "Joulu on Tulossa! Getting Ready for Christmas in Finland",
+        "level": "A1-A2",
+        "tags": [
+          "[Joulu on Tulossa! Getting Ready for Christmas in Finland",
+          "Finnish Culture",
+          "Christmas in Finland",
+          "Visit Finland",
+          "Finnish Language",
+          "Finnish Traditions]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:53:20.059880"
+    },
+    "\"Päiväkahvit! Taking a Fika Break the Finnish Way\"": {
+      "date": "2026-01-31",
+      "category": "Finnish Lifestyle and Society",
+      "metadata": {
+        "title": "Päiväkahvit! Taking a Fika Break the Finnish Way",
+        "level": "A1-A2",
+        "tags": [
+          "[Päiväkahvit",
+          "Finnish Culture",
+          "Fika",
+          "Finland",
+          "Coffee",
+          "Finnish Lifestyle",
+          "Visit Finland]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:54:07.752237"
+    },
+    "Tervetuloa Kylään! Finnish Guest Etiquette": {
+      "date": "2026-02-01",
+      "category": "Finnish Culture and Traditions",
+      "metadata": {
+        "title": "Tervetuloa Kylään! Finnish Guest Etiquette Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Guest Etiquette",
+          "Finland",
+          "Visit Finland",
+          "Traditions",
+          "Tervetuloa Kylään]"
+        ]
+      },
+      "recorded_at": "2026-01-25T15:54:48.400306"
     }
   }
 }
