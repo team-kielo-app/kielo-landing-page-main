@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "Terms of Service - Kielo",
   description:
     "Read Kielo's terms of service for using our Finnish language learning application, including EU consumer rights and subscription terms.",
+  openGraph: {
+    title: "Terms of Service - Kielo",
+    description:
+      "Read Kielo's terms of service for using our Finnish language learning application, including EU consumer rights and subscription terms.",
+    url: "https://kielo.app/terms",
+    siteName: "Kielo",
+    type: "website",
+  },
 };
 
 export default function TermsPage() {

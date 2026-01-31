@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "Data Processing Agreement - Kielo",
   description:
     "Kielo's Data Processing Agreement (DPA) governing the processing of personal data in compliance with Article 28 of the GDPR.",
+  openGraph: {
+    title: "Data Processing Agreement - Kielo",
+    description:
+      "Kielo's Data Processing Agreement (DPA) governing the processing of personal data in compliance with Article 28 of the GDPR.",
+    url: "https://kielo.app/gdpr",
+    siteName: "Kielo",
+    type: "website",
+  },
 };
 
 export default function GDPRPage() {

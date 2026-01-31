@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "Privacy Policy - Kielo",
   description:
     "Read Kielo's privacy policy to understand how we collect, use, and protect your personal data in compliance with GDPR.",
+  openGraph: {
+    title: "Privacy Policy - Kielo",
+    description:
+      "Read Kielo's privacy policy to understand how we collect, use, and protect your personal data in compliance with GDPR.",
+    url: "https://kielo.app/privacy",
+    siteName: "Kielo",
+    type: "website",
+  },
 };
 
 export default function PrivacyPage() {

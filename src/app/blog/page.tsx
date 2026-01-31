@@ -9,6 +9,14 @@ export const metadata: Metadata = {
   title: "Blog - Kielo",
   description:
     "Read articles about Finnish language learning, tips, cultural insights, and updates from the Kielo team.",
+  openGraph: {
+    title: "Blog - Kielo",
+    description:
+      "Read articles about Finnish language learning, tips, cultural insights, and updates from the Kielo team.",
+    url: "https://kielo.app/blog",
+    siteName: "Kielo",
+    type: "website",
+  },
 };
 
 export default function BlogPage() {

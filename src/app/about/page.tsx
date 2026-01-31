@@ -7,6 +7,14 @@ export const metadata: Metadata = {
   title: "About Us - Kielo",
   description:
     "Learn about Kielo, the AI-powered Finnish language learning app. Our mission is to make Finnish accessible and fun for everyone.",
+  openGraph: {
+    title: "About Us - Kielo",
+    description:
+      "Learn about Kielo, the AI-powered Finnish language learning app. Our mission is to make Finnish accessible and fun for everyone.",
+    url: "https://kielo.app/about",
+    siteName: "Kielo",
+    type: "website",
+  },
 };
 
 export default function AboutPage() {
