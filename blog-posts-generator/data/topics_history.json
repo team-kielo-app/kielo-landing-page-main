@@ -11,7 +11,14 @@
     "Retkelle! Packing a Finnish Day Trip Backpack",
     "\"Joulu on Tulossa! Getting Ready for Christmas in Finland\"",
     "\"Päiväkahvit! Taking a Fika Break the Finnish Way\"",
-    "Tervetuloa Kylään! Finnish Guest Etiquette"
+    "Tervetuloa Kylään! Finnish Guest Etiquette",
+    "Torille! Navigating a Finnish Market",
+    "\"Sienimetsällä! Mushroom Picking in Finland\"",
+    "Mökkielämää! A Beginner's Guide to Finnish Summer Cottage Life",
+    "\"Vappu Hauskaa! A Beginner's Guide to Finnish May Day Celebrations\"",
+    "\"Lounaalla! Ordering Lunch in Finland - A Survival Guide\"",
+    "\"Ruokakaupassa! A Beginner's Guide to Grocery Shopping in Finland\"",
+    "Bussissa! Riding the Bus in Finland: A Beginner's Guide"
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -224,6 +231,130 @@
         ]
       },
       "recorded_at": "2026-01-25T15:54:48.400306"
+    },
+    "Torille! Navigating a Finnish Market": {
+      "date": "2026-02-02",
+      "category": "Finnish Lifestyle and Society",
+      "metadata": {
+        "title": "Torille! Navigating a Finnish Market: A Cultural Journey",
+        "level": "A1-A2",
+        "tags": [
+          "Finnish Culture",
+          "Torille",
+          "Finnish Markets",
+          "Travel to Finland",
+          "Finnish Language",
+          "Finnish Lifestyle",
+          "Food"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:27:11.612415"
+    },
+    "\"Sienimetsällä! Mushroom Picking in Finland\"": {
+      "date": "2026-02-03",
+      "category": "Nature and Outdoors",
+      "metadata": {
+        "title": "Sienimetsällä! Mushroom Picking in Finland: A Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[mushroom picking",
+          "Finnish culture",
+          "nature",
+          "Finland",
+          "travel",
+          "language learning",
+          "sienimetsällä]"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:28:20.147965"
+    },
+    "Mökkielämää! A Beginner's Guide to Finnish Summer Cottage Life": {
+      "date": "2026-02-04",
+      "category": "Finnish Lifestyle and Society",
+      "metadata": {
+        "title": "Mökkielämää! Finnish Summer Cottage Life: A Beginner's Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Mökkielämää",
+          "Finnish Culture",
+          "Summer Cottage",
+          "Visit Finland",
+          "Finnish Lifestyle",
+          "Sauna",
+          "Lake Life]"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:29:15.177204"
+    },
+    "\"Vappu Hauskaa! A Beginner's Guide to Finnish May Day Celebrations\"": {
+      "date": "2026-02-05",
+      "category": "Finnish Culture and Traditions",
+      "metadata": {
+        "title": "Vappu Hauskaa! A Beginner's Guide to Finnish May Day",
+        "level": "A1-A2",
+        "tags": [
+          "[Vappu",
+          "Finnish Culture",
+          "May Day",
+          "Finland",
+          "Finnish Traditions",
+          "Student Life]"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:30:09.696864"
+    },
+    "\"Lounaalla! Ordering Lunch in Finland - A Survival Guide\"": {
+      "date": "2026-02-06",
+      "category": "Finnish Food and Dining",
+      "metadata": {
+        "title": "Lounaalla! Ordering Lunch in Finland: A Survival Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Visit Finland",
+          "Finnish Food",
+          "Lounaalla",
+          "Finnish Language",
+          "Ordering Lunch",
+          "Travel Guide]"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:30:54.580450"
+    },
+    "\"Ruokakaupassa! A Beginner's Guide to Grocery Shopping in Finland\"": {
+      "date": "2026-02-07",
+      "category": "Finnish Food and Dining",
+      "metadata": {
+        "title": "Ruokakaupassa! Finnish Grocery Shopping: A Beginner's Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Ruokakaupassa!",
+          "Finnish Culture",
+          "Visit Finland",
+          "Finnish Food",
+          "Grocery Shopping",
+          "Finnish Language",
+          "Finland]"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:31:42.288375"
+    },
+    "Bussissa! Riding the Bus in Finland: A Beginner's Guide": {
+      "date": "2026-02-08",
+      "category": "Travel and Tourism in Finland",
+      "metadata": {
+        "title": "Bussissa! Riding the Bus in Finland: A Beginner's Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Bussissa!",
+          "Finnish Culture",
+          "Visit Finland",
+          "Public Transportation",
+          "Language Learning",
+          "Travel Tips]"
+        ]
+      },
+      "recorded_at": "2026-02-01T10:32:26.206884"
     }
   }
 }
