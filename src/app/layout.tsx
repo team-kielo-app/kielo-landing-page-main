@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kielo.app"),
-  title: "Kielo - Master Finnish with AI-Powered Learning",
+  title: "Kielo - Master Finnish Fast with AI-Powered Conversations",
   description:
     "Kielo is the best way to learn Finnish and prepare for your YKI test using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
   keywords: [
@@ -57,24 +57,24 @@ export const metadata: Metadata = {
     siteName: "Kielo",
     locale: "en_US",
     type: "website",
-    title: "Kielo - Master Finnish with AI-Powered Learning",
+    title: "Kielo - Master Finnish Fast with AI-Powered Conversations",
     description:
-      "Kielo is the best way to learn Finnish using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
+      "Kielo is the best way to learn Finnish and prepare for your YKI test using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
     images: [
       {
-        url: "/hero-image.png",
+        url: "/og-image-optimized.png",
         width: 1200,
         height: 630,
-        alt: "Kielo App - AI Finnish Learning",
+        alt: "Kielo App - Master Finnish Fast",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kielo - Master Finnish with AI-Powered Learning",
+    title: "Kielo - Master Finnish Fast with AI-Powered Conversations",
     description:
-      "Kielo is the best way to learn Finnish using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
-    images: ["/hero-image.png"],
+      "Kielo is the best way to learn Finnish and prepare for your YKI test using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
+    images: ["/og-image-optimized.png"],
   },
   robots: {
     index: true,
