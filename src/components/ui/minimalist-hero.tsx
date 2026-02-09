@@ -77,7 +77,6 @@ export const MinimalistHero = ({
     >
       {/* Header */}
       <KieloNav
-        className="px-4 md:px-0"
         navLinks={navLinks}
         logoSrc={leftLogoSrc}
         logoAlt={logoAltText}

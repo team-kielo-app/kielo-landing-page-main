@@ -25,6 +25,7 @@ def get_client():
 def generate_topic_suggestion(topic_manager: TopicManager) -> Dict[str, str]:
     """
     Use AI to suggest a new topic based on history and available content.
+    Uses Google Search to find trending/current Finnish topics.
     
     Returns dict with: topic, category, brief
     """
@@ -32,27 +33,49 @@ def generate_topic_suggestion(topic_manager: TopicManager) -> Dict[str, str]:
     
     prompt = f"""You are a creative Finnish culture & lifestyle editor planning blog topics.
 
+FIRST: Use Google Search to find CURRENT and TRENDING topics about Finland. Search for:
+- Recent Finnish news and events
+- Upcoming Finnish holidays or celebrations
+- Trending Finnish culture topics
+- Current travel or lifestyle trends in Finland
+
 {topic_manager.suggest_topic_prompt()}
 
-SUGGEST A NEW TOPIC from categories like:
+Based on your research and the banned concepts above, SUGGEST A COMPLETELY NEW TOPIC from categories like:
 - Finnish Culture & Traditions
 - Travel & Tourism
-- Food & Dining
+- Food & Dining  
 - Lifestyle & Society
 - Nature & Outdoors
+- Work & Business in Finland
+- Finnish Language Tips (practical phrases)
+- Finnish History & Famous People
+- Finnish Design, Music & Arts
+- Sports & Entertainment in Finland
 
-The topic should be engaging, like a magazine article title (e.g. "Why Finns Love Sauna", "Top 5 Foods to Try", "Lapland Northern Lights Guide").
-AVOID purely grammatical titles like "The Genitive Case".
+The topic should be:
+1. FRESH and not similar to any banned concepts
+2. Engaging, like a magazine article title
+3. Based on current events or trends if possible
+4. Practical for people interested in Finland
+
+AVOID:
+- Topics similar to banned concepts
+- Purely grammatical titles like "The Genitive Case"
+- Generic topics that could apply to any country
 
 Remember to output in this exact format:
-TOPIC: [topic title - specific and catchy]
+TOPIC: [topic title - specific, catchy, and UNIQUE]
 CATEGORY: [category name]
 BRIEF: [2-3 sentence description of the cultural angle]
 """
     
     response = client.models.generate_content(
         model=TEXT_MODEL,
-        contents=prompt
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            tools=[types.Tool(google_search=types.GoogleSearch())]
+        )
     )
     text = response.text
     

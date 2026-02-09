@@ -227,7 +227,8 @@ def generate(
 @click.option('--list', '-l', 'list_topics', is_flag=True, help='List all used topics.')
 @click.option('--clear', is_flag=True, help='Clear all topic history (use with caution!).')
 @click.option('--suggest', '-s', is_flag=True, help='Get an AI topic suggestion.')
-def topics(list_topics: bool, clear: bool, suggest: bool):
+@click.option('--backfill-concepts', is_flag=True, help='Extract concepts for existing topics that don\'t have them.')
+def topics(list_topics: bool, clear: bool, suggest: bool, backfill_concepts: bool):
     """Manage topic history."""
     topic_manager = TopicManager()
     
@@ -235,6 +236,32 @@ def topics(list_topics: bool, clear: bool, suggest: bool):
         if click.confirm('⚠️  Are you sure you want to clear all topic history?'):
             topic_manager.clear_history()
             click.echo("✅ Topic history cleared.")
+        return
+    
+    if backfill_concepts:
+        click.echo("🔄 Backfilling concepts for existing topics...")
+        details = topic_manager.topics_history.get("topic_details", {})
+        updated = 0
+        
+        for topic, info in details.items():
+            if not info.get("concepts"):
+                click.echo(f"   📝 Extracting concepts for: {topic[:50]}...")
+                concepts = topic_manager.extract_concepts(topic, info.get("category"))
+                info["concepts"] = concepts
+                click.echo(f"      → {', '.join(concepts)}")
+                updated += 1
+        
+        if updated > 0:
+            topic_manager._save_data()
+            click.echo(f"\n✅ Updated {updated} topics with concepts.")
+        else:
+            click.echo("\n✅ All topics already have concepts.")
+        
+        # Show all banned concepts
+        banned = topic_manager.get_banned_concepts()
+        click.echo(f"\n🚫 Total banned concepts ({len(banned)}): {', '.join(banned[:20])}")
+        if len(banned) > 20:
+            click.echo(f"   ... and {len(banned) - 20} more")
         return
     
     if suggest:
@@ -274,11 +301,13 @@ def topics(list_topics: bool, clear: bool, suggest: bool):
     # Default: show summary
     used = topic_manager.get_used_topics()
     available = topic_manager.get_available_categories()
+    banned = topic_manager.get_banned_concepts()
     
     click.echo(f"\n📊 Topic Summary:")
     click.echo(f"   Used topics: {len(used)}")
+    click.echo(f"   Banned concepts: {len(banned)}")
     click.echo(f"   Available categories: {len(available)}")
-    click.echo(f"\nUse --list to see all topics, or --suggest for AI recommendation.")
+    click.echo(f"\nUse --list to see all topics, --suggest for AI recommendation, or --backfill-concepts to extract concepts.")
 
 
 @cli.command()

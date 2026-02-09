@@ -18,7 +18,10 @@
     "\"Vappu Hauskaa! A Beginner's Guide to Finnish May Day Celebrations\"",
     "\"Lounaalla! Ordering Lunch in Finland - A Survival Guide\"",
     "\"Ruokakaupassa! A Beginner's Guide to Grocery Shopping in Finland\"",
-    "Bussissa! Riding the Bus in Finland: A Beginner's Guide"
+    "Bussissa! Riding the Bus in Finland: A Beginner's Guide",
+    "\"Everyman's Right: Exploring Finnish Nature Respectfully\"",
+    "\"Navigating 'S-Market': Your Neighborhood Grocery Store in Finland\"",
+    "\"Sustainable Souvenirs: Ethical Gift-Giving in Finland\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -37,7 +40,14 @@
           "Finnish language]"
         ]
       },
-      "recorded_at": "2026-01-19T17:01:36.262962"
+      "recorded_at": "2026-01-19T17:01:36.262962",
+      "concepts": [
+        "mustikka",
+        "bilberry",
+        "berry picking",
+        "foraging",
+        "nature"
+      ]
     },
     "\"Torilla Tavataan! A Beginner's Guide to Finnish Market Culture\"": {
       "date": "2026-01-21",
@@ -55,7 +65,14 @@
           "Traditions]"
         ]
       },
-      "recorded_at": "2026-01-19T17:15:12.634004"
+      "recorded_at": "2026-01-19T17:15:12.634004",
+      "concepts": [
+        "market",
+        "tori",
+        "outdoor market",
+        "vendors",
+        "finnish culture"
+      ]
     },
     "Sää on Puheenaihe! Talking About the Weather in Finland": {
       "date": "2026-01-23",
@@ -73,7 +90,14 @@
           "Sää]"
         ]
       },
-      "recorded_at": "2026-01-22T14:38:28.516375"
+      "recorded_at": "2026-01-22T14:38:28.516375",
+      "concepts": [
+        "sää",
+        "weather",
+        "puheenaihe",
+        "small talk",
+        "finnish culture"
+      ]
     },
     "Mökille! Planning Your First Finnish Summer Cottage Trip": {
       "date": "2026-01-24",
@@ -90,7 +114,14 @@
           "Travel]"
         ]
       },
-      "recorded_at": "2026-01-22T14:47:35.673097"
+      "recorded_at": "2026-01-22T14:47:35.673097",
+      "concepts": [
+        "mökki",
+        "summer cottage",
+        "finnish sauna",
+        "nature",
+        "relaxation"
+      ]
     },
     "Ruokatauko! Ordering Coffee and a Korvapuusti Like a Finn": {
       "date": "2026-01-25",
@@ -107,7 +138,14 @@
           "Finnish Language]"
         ]
       },
-      "recorded_at": "2026-01-22T14:48:37.512672"
+      "recorded_at": "2026-01-22T14:48:37.512672",
+      "concepts": [
+        "coffee",
+        "korvapuusti",
+        "ruokatauko",
+        "food break",
+        "finnish pastry"
+      ]
     },
     "Linnanmäki! A Beginner's Guide to Finland's Favorite Amusement Park": {
       "date": "2026-01-26",
@@ -125,7 +163,14 @@
           "Family Fun]"
         ]
       },
-      "recorded_at": "2026-01-25T15:50:25.582767"
+      "recorded_at": "2026-01-25T15:50:25.582767",
+      "concepts": [
+        "linnanmäki",
+        "amusement park",
+        "finland",
+        "theme park",
+        "attractions"
+      ]
     },
     "Juhannus Taikaa: Celebrating Midsummer in Finland!": {
       "date": "2026-01-27",
@@ -142,7 +187,8 @@
           "Summer Solstice]"
         ]
       },
-      "recorded_at": "2026-01-25T15:51:05.035730"
+      "recorded_at": "2026-01-25T15:51:05.035730",
+      "concepts": []
     },
     "Bussilla Matkalle! A Beginner's Guide to Using Public Transport in Finland": {
       "date": "2026-01-28",
@@ -160,7 +206,14 @@
           "Visit Finland]"
         ]
       },
-      "recorded_at": "2026-01-25T15:51:51.471082"
+      "recorded_at": "2026-01-25T15:51:51.471082",
+      "concepts": [
+        "bus travel",
+        "finland",
+        "public transport",
+        "matkakortti",
+        "commuting"
+      ]
     },
     "Retkelle! Packing a Finnish Day Trip Backpack": {
       "date": "2026-01-29",
@@ -178,7 +231,14 @@
           "Travel]"
         ]
       },
-      "recorded_at": "2026-01-25T15:52:38.787178"
+      "recorded_at": "2026-01-25T15:52:38.787178",
+      "concepts": [
+        "day trip",
+        "backpacking",
+        "outdoors",
+        "finnish nature",
+        "snacks"
+      ]
     },
     "\"Joulu on Tulossa! Getting Ready for Christmas in Finland\"": {
       "date": "2026-01-30",
@@ -195,7 +255,14 @@
           "Finnish Traditions]"
         ]
       },
-      "recorded_at": "2026-01-25T15:53:20.059880"
+      "recorded_at": "2026-01-25T15:53:20.059880",
+      "concepts": [
+        "joulu",
+        "finnish christmas",
+        "christmas traditions",
+        "christmas preparations",
+        "finnish culture"
+      ]
     },
     "\"Päiväkahvit! Taking a Fika Break the Finnish Way\"": {
       "date": "2026-01-31",
@@ -213,7 +280,14 @@
           "Visit Finland]"
         ]
       },
-      "recorded_at": "2026-01-25T15:54:07.752237"
+      "recorded_at": "2026-01-25T15:54:07.752237",
+      "concepts": [
+        "päiväkahvit",
+        "fika",
+        "coffee break",
+        "finnish culture",
+        "socialising"
+      ]
     },
     "Tervetuloa Kylään! Finnish Guest Etiquette": {
       "date": "2026-02-01",
@@ -230,7 +304,14 @@
           "Tervetuloa Kylään]"
         ]
       },
-      "recorded_at": "2026-01-25T15:54:48.400306"
+      "recorded_at": "2026-01-25T15:54:48.400306",
+      "concepts": [
+        "guest etiquette",
+        "kylässä",
+        "visiting",
+        "hosting",
+        "sauna"
+      ]
     },
     "Torille! Navigating a Finnish Market": {
       "date": "2026-02-02",
@@ -248,7 +329,14 @@
           "Food"
         ]
       },
-      "recorded_at": "2026-02-01T10:27:11.612415"
+      "recorded_at": "2026-02-01T10:27:11.612415",
+      "concepts": [
+        "market culture",
+        "tori",
+        "local produce",
+        "social gathering",
+        "seasonal goods"
+      ]
     },
     "\"Sienimetsällä! Mushroom Picking in Finland\"": {
       "date": "2026-02-03",
@@ -266,7 +354,14 @@
           "sienimetsällä]"
         ]
       },
-      "recorded_at": "2026-02-01T10:28:20.147965"
+      "recorded_at": "2026-02-01T10:28:20.147965",
+      "concepts": [
+        "mushroom picking",
+        "sienimetsällä",
+        "forest",
+        "nature",
+        "foraging"
+      ]
     },
     "Mökkielämää! A Beginner's Guide to Finnish Summer Cottage Life": {
       "date": "2026-02-04",
@@ -284,7 +379,14 @@
           "Lake Life]"
         ]
       },
-      "recorded_at": "2026-02-01T10:29:15.177204"
+      "recorded_at": "2026-02-01T10:29:15.177204",
+      "concepts": [
+        "cottage life",
+        "mökki",
+        "finnish summer",
+        "sauna",
+        "nature"
+      ]
     },
     "\"Vappu Hauskaa! A Beginner's Guide to Finnish May Day Celebrations\"": {
       "date": "2026-02-05",
@@ -301,7 +403,14 @@
           "Student Life]"
         ]
       },
-      "recorded_at": "2026-02-01T10:30:09.696864"
+      "recorded_at": "2026-02-01T10:30:09.696864",
+      "concepts": [
+        "vappu",
+        "may day",
+        "labor day",
+        "student celebrations",
+        "spring festival"
+      ]
     },
     "\"Lounaalla! Ordering Lunch in Finland - A Survival Guide\"": {
       "date": "2026-02-06",
@@ -319,7 +428,8 @@
           "Travel Guide]"
         ]
       },
-      "recorded_at": "2026-02-01T10:30:54.580450"
+      "recorded_at": "2026-02-01T10:30:54.580450",
+      "concepts": []
     },
     "\"Ruokakaupassa! A Beginner's Guide to Grocery Shopping in Finland\"": {
       "date": "2026-02-07",
@@ -337,7 +447,8 @@
           "Finland]"
         ]
       },
-      "recorded_at": "2026-02-01T10:31:42.288375"
+      "recorded_at": "2026-02-01T10:31:42.288375",
+      "concepts": []
     },
     "Bussissa! Riding the Bus in Finland: A Beginner's Guide": {
       "date": "2026-02-08",
@@ -354,7 +465,82 @@
           "Travel Tips]"
         ]
       },
-      "recorded_at": "2026-02-01T10:32:26.206884"
+      "recorded_at": "2026-02-01T10:32:26.206884",
+      "concepts": []
+    },
+    "\"Everyman's Right: Exploring Finnish Nature Respectfully\"": {
+      "date": "2026-02-10",
+      "category": "Nature and Outdoors",
+      "concepts": [
+        "everymans right",
+        "jokamiehenoikeudet",
+        "responsible hiking",
+        "nature etiquette",
+        "finnish nature"
+      ],
+      "metadata": {
+        "title": "Everyman's Right: Exploring Finnish Nature Respectfully",
+        "level": "A1-A2",
+        "tags": [
+          "[Everyman's Right: Exploring Finnish Nature Respectfully",
+          "Finnish Culture",
+          "Finland",
+          "Nature",
+          "Outdoors",
+          "Travel",
+          "Lifestyle]"
+        ]
+      },
+      "recorded_at": "2026-02-09T18:59:43.753945"
+    },
+    "\"Navigating 'S-Market': Your Neighborhood Grocery Store in Finland\"": {
+      "date": "2026-02-11",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "s-market",
+        "grocery shopping",
+        "finnish supermarkets",
+        "neighborhood store",
+        "everyday life"
+      ],
+      "metadata": {
+        "title": "Navigating 'S-Market': Your Neighborhood Grocery Store in Finland",
+        "level": "A1-A2",
+        "tags": [
+          "S-Market",
+          "Finnish Culture",
+          "Grocery Shopping",
+          "Finland",
+          "Visit Finland",
+          "Finnish Language"
+        ]
+      },
+      "recorded_at": "2026-02-09T19:04:55.365185"
+    },
+    "\"Sustainable Souvenirs: Ethical Gift-Giving in Finland\"": {
+      "date": "2026-02-12",
+      "category": "Travel and Tourism in Finland",
+      "concepts": [
+        "sustainable souvenirs",
+        "ethical gift-giving",
+        "finland",
+        "local crafts",
+        "responsible tourism"
+      ],
+      "metadata": {
+        "title": "Sustainable Souvenirs: Ethical Gift-Giving in Finland",
+        "level": "A1-A2",
+        "tags": [
+          "Sustainable Souvenirs",
+          "Finnish Culture",
+          "Visit Finland",
+          "Ethical Gift Giving",
+          "Finland",
+          "Travel",
+          "Tourism"
+        ]
+      },
+      "recorded_at": "2026-02-09T19:06:38.960680"
     }
   }
 }

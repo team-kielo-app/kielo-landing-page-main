@@ -75,7 +75,7 @@ export default function KieloNav({
 
   return (
     <header
-      className={`z-30 flex w-full max-w-[1280px] items-center justify-between ${className}`}
+      className={`z-30 flex w-full max-w-[1280px] items-center justify-between px-4 md:px-8 ${className}`}
     >
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -87,9 +87,8 @@ export default function KieloNav({
             src={resolvedLogoSrc}
             alt={resolvedLogoAlt}
             style={resolvedLogoStyle}
-            className={`object-contain cursor-pointer${
-              logoClassName ? ` ${logoClassName}` : ""
-            }`}
+            className={`object-contain cursor-pointer${logoClassName ? ` ${logoClassName}` : ""
+              }`}
           />
         </Link>
       </motion.div>

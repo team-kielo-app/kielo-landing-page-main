@@ -8,7 +8,9 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, List, Optional, Set
 
-from .config import DATA_DIR, TOPIC_CATEGORIES
+from .config import DATA_DIR, TOPIC_CATEGORIES, GEMINI_API_KEY, TEXT_MODEL
+
+from google import genai
 
 
 class TopicManager:
@@ -101,6 +103,71 @@ class TopicManager:
         
         return "\n".join(context_parts)
     
+    def _get_client(self):
+        """Get the Gemini client."""
+        if not GEMINI_API_KEY:
+            raise ValueError("GEMINI_API_KEY not found.")
+        return genai.Client(api_key=GEMINI_API_KEY)
+    
+    def extract_concepts(self, topic: str, category: Optional[str] = None) -> List[str]:
+        """
+        Use AI to extract core concepts/themes from a topic.
+        These concepts will be used to prevent semantically similar topics.
+        
+        Args:
+            topic: The topic title
+            category: Optional category for context
+        
+        Returns:
+            List of 3-5 core concepts (lowercase keywords)
+        """
+        try:
+            client = self._get_client()
+            
+            prompt = f"""Extract 3-5 core concepts/themes from this Finnish blog topic.
+
+Topic: {topic}
+{f"Category: {category}" if category else ""}
+
+Return ONLY a comma-separated list of lowercase keywords that capture the core themes.
+These should be specific enough to prevent similar topics from being generated.
+
+Examples:
+- "Juhannus Taikaa: Celebrating Midsummer" → midsummer, juhannus, summer solstice, kokko, bonfire
+- "Bussilla Matkalle! Public Transport Guide" → bus, public transport, julkinen liikenne, travel, commuting
+- "Mökille! Finnish Cottage Trip" → cottage, mökki, summer house, lake, cabin
+
+Your response (just the comma-separated concepts, nothing else):"""
+            
+            response = client.models.generate_content(
+                model=TEXT_MODEL,
+                contents=prompt
+            )
+            
+            # Parse the response - split by comma and clean up
+            concepts = [c.strip().lower() for c in response.text.split(',') if c.strip()]
+            return concepts[:5]  # Limit to 5 concepts
+            
+        except Exception as e:
+            print(f"Warning: Could not extract concepts: {e}")
+            return []
+    
+    def get_banned_concepts(self) -> List[str]:
+        """
+        Get all concepts from previously used topics.
+        These should be avoided in new topic suggestions.
+        
+        Returns:
+            Deduplicated list of all banned concepts
+        """
+        all_concepts = set()
+        
+        for topic, details in self.topics_history.get("topic_details", {}).items():
+            concepts = details.get("concepts", [])
+            all_concepts.update(concepts)
+        
+        return sorted(list(all_concepts))
+    
     def record_topic(
         self,
         topic: str,
@@ -121,10 +188,14 @@ class TopicManager:
         if topic not in self.topics_history["used_topics"]:
             self.topics_history["used_topics"].append(topic)
         
-        # Store details
+        # Extract concepts for this topic
+        concepts = self.extract_concepts(topic, category)
+        
+        # Store details with concepts
         self.topics_history["topic_details"][topic] = {
             "date": date,
             "category": category,
+            "concepts": concepts,
             "metadata": metadata or {},
             "recorded_at": datetime.now().isoformat()
         }
@@ -139,23 +210,34 @@ class TopicManager:
     def suggest_topic_prompt(self) -> str:
         """
         Generate a prompt section for AI to select a new topic.
+        Includes banned concepts to prevent semantically similar topics.
         """
         context = self.get_context_for_ai()
         available = self.get_available_categories()
+        banned_concepts = self.get_banned_concepts()
+        
+        # Format banned concepts for the prompt
+        banned_str = ", ".join(banned_concepts) if banned_concepts else "(none yet)"
         
         prompt = f"""
 {context}
 
-Based on this history, suggest a NEW topic for a Finnish language learning blog post.
+## BANNED CONCEPTS (DO NOT use these themes)
+The following concepts have ALREADY been covered. You MUST NOT suggest any topic that relates to these:
+{banned_str}
+
+Based on this history, suggest a COMPLETELY NEW topic for a Finnish language learning blog post.
 
 Requirements:
 - Target level: A1-A2 (beginner)
-- Must be different from previously covered topics
+- MUST be COMPLETELY DIFFERENT from previously covered topics
+- MUST NOT relate to any of the banned concepts above
 - Should be practical and useful for daily life
 - Consider these unexplored categories: {', '.join(available[:5])}
+- Be creative and find a FRESH angle on Finnish culture/lifestyle
 
 Provide your topic suggestion in this format:
-TOPIC: [Your topic title]
+TOPIC: [Your topic title - must be unique and not similar to any previous topic]
 CATEGORY: [Matching category from the list]
 BRIEF: [2-3 sentence description of what the post will cover]
 """
