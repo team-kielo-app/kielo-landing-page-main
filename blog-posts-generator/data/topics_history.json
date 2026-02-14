@@ -21,7 +21,10 @@
     "Bussissa! Riding the Bus in Finland: A Beginner's Guide",
     "\"Everyman's Right: Exploring Finnish Nature Respectfully\"",
     "\"Navigating 'S-Market': Your Neighborhood Grocery Store in Finland\"",
-    "\"Sustainable Souvenirs: Ethical Gift-Giving in Finland\""
+    "\"Sustainable Souvenirs: Ethical Gift-Giving in Finland\"",
+    "**\"Kalsarikännit: The Finnish Art of Getting Drunk at Home (In Your Underwear)\"**",
+    "\"Name Days: More Than Just Coffee and Cake!\"",
+    "\"Talviuinti: Taking the Plunge - A Beginner's Guide to Winter Swimming in Finland\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -541,6 +544,79 @@
         ]
       },
       "recorded_at": "2026-02-09T19:06:38.960680"
+    },
+    "**\"Kalsarikännit: The Finnish Art of Getting Drunk at Home (In Your Underwear)\"**": {
+      "date": "2026-02-15",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "kalsarikännit",
+        "home drinking",
+        "underwear",
+        "solitude",
+        "finnish culture"
+      ],
+      "metadata": {
+        "title": "Kalsarikännit: Get Drunk at Home, The Finnish Way",
+        "level": "A1-A2",
+        "tags": [
+          "[Kalsarikännit",
+          "Finnish Culture",
+          "Drinking Culture",
+          "Finland",
+          "Lifestyle",
+          "Language Learning]"
+        ]
+      },
+      "recorded_at": "2026-02-14T09:55:27.843246"
+    },
+    "\"Name Days: More Than Just Coffee and Cake!\"": {
+      "date": "2026-02-16",
+      "category": "Finnish Culture and Traditions",
+      "concepts": [
+        "namedays",
+        "nimipäivä",
+        "celebration",
+        "tradition",
+        "finnish culture"
+      ],
+      "metadata": {
+        "title": "Name Days: More Than Just Coffee and Cake!",
+        "level": "A1-A2",
+        "tags": [
+          "[Name Days",
+          "Finnish Culture",
+          "Finnish Traditions",
+          "Finland",
+          "Onomastics",
+          "Finnish Language]"
+        ]
+      },
+      "recorded_at": "2026-02-14T09:56:41.811481"
+    },
+    "\"Talviuinti: Taking the Plunge - A Beginner's Guide to Winter Swimming in Finland\"": {
+      "date": "2026-02-17",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "winter swimming",
+        "ice swimming",
+        "avanto",
+        "cold exposure",
+        "finnish sauna"
+      ],
+      "metadata": {
+        "title": "Talviuinti: Taking the Plunge in Finland - Beginner's Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Talviuinti",
+          "Winter Swimming",
+          "Finnish Culture",
+          "Finland",
+          "Visit Finland",
+          "Sauna",
+          "Wellbeing]"
+        ]
+      },
+      "recorded_at": "2026-02-14T09:57:33.922077"
     }
   }
 }
