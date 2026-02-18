@@ -24,7 +24,14 @@
     "\"Sustainable Souvenirs: Ethical Gift-Giving in Finland\"",
     "**\"Kalsarikännit: The Finnish Art of Getting Drunk at Home (In Your Underwear)\"**",
     "\"Name Days: More Than Just Coffee and Cake!\"",
-    "\"Talviuinti: Taking the Plunge - A Beginner's Guide to Winter Swimming in Finland\""
+    "\"Talviuinti: Taking the Plunge - A Beginner's Guide to Winter Swimming in Finland\"",
+    "\"Taloustalkoot: Finnish Frugality and the Art of Saving Money\"",
+    "\"Visiting a 'Kyläkauppa': More Than Just a Shop!\"",
+    "\"Suomalainen elokuvateatteri: Going to the Movies in Finland\"",
+    "\"Löyly: More Than Just Steam - Understanding the Finnish Sauna Experience\"",
+    "\"Torilla Tavataan! Understanding Finnish Public Gatherings and Events\"",
+    "\"Kela-kortti: Your Key to Finnish Social Security\"",
+    "\"Oulu: Finland's Coolest City (You've Never Heard Of!)\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -617,6 +624,174 @@
         ]
       },
       "recorded_at": "2026-02-14T09:57:33.922077"
+    },
+    "\"Taloustalkoot: Finnish Frugality and the Art of Saving Money\"": {
+      "date": "2026-02-19",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "frugality",
+        "saving money",
+        "taloustalkoot",
+        "finnish lifestyle",
+        "financial responsibility"
+      ],
+      "metadata": {
+        "title": "Taloustalkoot: Frugal Finnish Ways to Save Money",
+        "level": "A1-A2",
+        "tags": [
+          "[Taloustalkoot",
+          "Finnish Culture",
+          "Frugality",
+          "Saving Money",
+          "Finnish Lifestyle",
+          "Language Learning",
+          "Visit Finland]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:23:23.000284"
+    },
+    "\"Visiting a 'Kyläkauppa': More Than Just a Shop!\"": {
+      "date": "2026-02-20",
+      "category": "Travel and Tourism in Finland / Finnish Lifestyle and Society",
+      "concepts": [
+        "kyläkauppa",
+        "village shop",
+        "community",
+        "rural tourism",
+        "finnish culture"
+      ],
+      "metadata": {
+        "title": "Visiting a 'Kyläkauppa': More Than Just a Shop!",
+        "level": "A1-A2",
+        "tags": [
+          "[Kyläkauppa",
+          "Finnish Culture",
+          "Village Shop",
+          "Visit Finland",
+          "Finnish Lifestyle",
+          "Travel Tips",
+          "Souvenirs]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:24:13.685049"
+    },
+    "\"Suomalainen elokuvateatteri: Going to the Movies in Finland\"": {
+      "date": "2026-02-21",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "cinema",
+        "movies",
+        "film culture",
+        "audience experience",
+        "finnish cinema"
+      ],
+      "metadata": {
+        "title": "Suomalainen elokuvateatteri: Movies in Finland",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish cinema",
+          "movies",
+          "Finnish culture",
+          "Finland",
+          "Visit Finland",
+          "language learning",
+          "Finnish lifestyle]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:25:03.453761"
+    },
+    "\"Löyly: More Than Just Steam - Understanding the Finnish Sauna Experience\"": {
+      "date": "2026-02-22",
+      "category": "Sauna Culture",
+      "concepts": [],
+      "metadata": {
+        "title": "Löyly: More Than Just Steam - Finnish Sauna Experience",
+        "level": "A1-A2",
+        "tags": [
+          "[löyly",
+          "Finnish Sauna",
+          "Finnish Culture",
+          "Visit Finland",
+          "Sauna",
+          "Finland",
+          "Traditions]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:25:50.147132"
+    },
+    "\"Torilla Tavataan! Understanding Finnish Public Gatherings and Events\"": {
+      "date": "2026-02-23",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "public gatherings",
+        "public events",
+        "marketplace culture",
+        "community",
+        "social interaction"
+      ],
+      "metadata": {
+        "title": "Torilla Tavataan! Finnish Public Gatherings & Events",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Torilla Tavataan",
+          "Public Events",
+          "Finland",
+          "Finnish Lifestyle",
+          "Visit Finland",
+          "Finnish Language]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:26:54.662820"
+    },
+    "\"Kela-kortti: Your Key to Finnish Social Security\"": {
+      "date": "2026-02-24",
+      "category": "Finnish Lifestyle and Society",
+      "concepts": [
+        "kela-kortti",
+        "social security",
+        "benefits",
+        "finland",
+        "healthcare"
+      ],
+      "metadata": {
+        "title": "Kela-kortti: Your Key to Finnish Social Security",
+        "level": "A1-A2",
+        "tags": [
+          "[Kela-kortti",
+          "Finnish Social Security",
+          "Finnish Culture",
+          "Finland",
+          "Living in Finland",
+          "Healthcare in Finland]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:27:57.536275"
+    },
+    "\"Oulu: Finland's Coolest City (You've Never Heard Of!)\"": {
+      "date": "2026-02-25",
+      "category": "Cities and Places to Visit",
+      "concepts": [
+        "oulu",
+        "northern finland",
+        "hidden gem",
+        "underrated city",
+        "cultural hub"
+      ],
+      "metadata": {
+        "title": "Oulu: Finland's Coolest City (You've Never Heard Of!)",
+        "level": "A1-A2",
+        "tags": [
+          "[Oulu",
+          "Finnish Culture",
+          "Visit Finland",
+          "Northern Finland",
+          "City Travel",
+          "Finnish Language",
+          "Travel Guide]"
+        ]
+      },
+      "recorded_at": "2026-02-18T18:28:44.026076"
     }
   }
 }
