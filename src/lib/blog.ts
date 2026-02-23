@@ -14,7 +14,7 @@ export interface BlogPost {
     content: string;
 }
 
-const postsDirectory = path.join(process.cwd(), "public/blogs");
+const postsDirectory = path.join(process.cwd(), "public/blogs"); // Fetches from public folder
 
 export function getBlogPosts(): BlogPost[] {
     // Check if directory exists
