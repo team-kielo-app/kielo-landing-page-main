@@ -1,0 +1,5 @@
+{
+    "git": {
+        "ignoreBuildScript": "git diff HEAD^ HEAD --quiet ."
+    }
+}
