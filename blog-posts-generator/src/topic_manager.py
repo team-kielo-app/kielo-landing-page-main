@@ -222,6 +222,10 @@ Your response (just the comma-separated concepts, nothing else):"""
         prompt = f"""
 {context}
 
+## CONTENT MIX STRATEGY
+We aim for 60% practical language learning posts and 40% culture/lifestyle posts.
+Ensure variety across both types.
+
 ## BANNED CONCEPTS (DO NOT use these themes)
 The following concepts have ALREADY been covered. You MUST NOT suggest any topic that relates to these:
 {banned_str}
@@ -232,9 +236,9 @@ Requirements:
 - Target level: A1-A2 (beginner)
 - MUST be COMPLETELY DIFFERENT from previously covered topics
 - MUST NOT relate to any of the banned concepts above
-- Should be practical and useful for daily life
+- Should be practical and useful for daily life or language learning
 - Consider these unexplored categories: {', '.join(available[:5])}
-- Be creative and find a FRESH angle on Finnish culture/lifestyle
+- Be creative and find a FRESH angle
 
 Provide your topic suggestion in this format:
 TOPIC: [Your topic title - must be unique and not similar to any previous topic]

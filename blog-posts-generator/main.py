@@ -120,6 +120,7 @@ def generate(
         click.echo(f"{'='*50}")
         
         # Get topic
+        current_content_type = 'learning'  # default when topic is manually specified
         if topic and i == 0:
             # Use provided topic for first post only
             current_topic = topic
@@ -130,8 +131,10 @@ def generate(
             suggestion = generate_topic_suggestion(topic_manager)
             current_topic = suggestion['topic']
             current_category = suggestion.get('category')
+            current_content_type = suggestion.get('content_type', 'learning')
             click.echo(f"   Topic: {current_topic}")
             click.echo(f"   Category: {current_category}")
+            click.echo(f"   Content Type: {'📚 Learning' if current_content_type == 'learning' else '🏛️ Culture'}")
             click.echo(f"   Brief: {suggestion.get('brief', '')[:100]}...")
         
         # Generate blog post
@@ -140,7 +143,8 @@ def generate(
             topic=current_topic,
             date=date_str,
             category=current_category,
-            level=level
+            level=level,
+            content_type=current_content_type if not topic else 'learning'
         )
         
         click.echo(f"   Title: {post_data['title']}")

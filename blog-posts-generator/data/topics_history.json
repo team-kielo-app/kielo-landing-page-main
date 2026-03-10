@@ -31,7 +31,14 @@
     "\"Löyly: More Than Just Steam - Understanding the Finnish Sauna Experience\"",
     "\"Torilla Tavataan! Understanding Finnish Public Gatherings and Events\"",
     "\"Kela-kortti: Your Key to Finnish Social Security\"",
-    "\"Oulu: Finland's Coolest City (You've Never Heard Of!)\""
+    "\"Oulu: Finland's Coolest City (You've Never Heard Of!)\"",
+    "\"Navigating Finnish Small Talk: 5 Questions That Actually Work\"",
+    "\"Puhu Suomea? Decode Everyday Finnish Questions!\"",
+    "**",
+    "\"Sano Se Suomeksi! Essential Phrases for Finnish Foodies\"",
+    "\"Terve! Hei! Mitä kuuluu?: Mastering Finnish Greetings Beyond 'Hello'\"",
+    "\"Decoding Finnish Table Manners: A Beginner's Guide to Ruokapöytäetiketti\"",
+    "\"Numbers in Your Pocket: Using Finnish Numbers When Shopping\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -792,6 +799,172 @@
         ]
       },
       "recorded_at": "2026-02-18T18:28:44.026076"
+    },
+    "\"Navigating Finnish Small Talk: 5 Questions That Actually Work\"": {
+      "date": "2026-03-11",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "finnish small talk",
+        "effective questions",
+        "conversation starters",
+        "cultural nuances",
+        "getting to know you"
+      ],
+      "metadata": {
+        "title": "Navigating Finnish Small Talk: 5 Questions That Work",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Small Talk",
+          "Learn Finnish",
+          "Finnish Language",
+          "Everyday Conversations",
+          "Finnish Culture]"
+        ]
+      },
+      "recorded_at": "2026-03-10T19:54:47.293438"
+    },
+    "\"Puhu Suomea? Decode Everyday Finnish Questions!\"": {
+      "date": "2026-03-12",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "finnish language",
+        "everyday questions",
+        "conversation",
+        "comprehension",
+        "communication"
+      ],
+      "metadata": {
+        "title": "Puhu Suomea? Decode Everyday Finnish Questions!",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Finnish Questions",
+          "Everyday Conversations",
+          "Finnish for Beginners]"
+        ]
+      },
+      "recorded_at": "2026-03-10T19:55:39.150814"
+    },
+    "**": {
+      "date": "2026-03-13",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "everyday language",
+        "casual speech",
+        "common phrases",
+        "informal communication",
+        "conversational finnish"
+      ],
+      "metadata": {
+        "title": "**Finnish Sisu: Embracing Perseverance**",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Sisu",
+          "Perseverance",
+          "Finnish Language",
+          "Everyday Conversations",
+          "Visit Finland]"
+        ]
+      },
+      "recorded_at": "2026-03-10T19:56:32.808598"
+    },
+    "\"Sano Se Suomeksi! Essential Phrases for Finnish Foodies\"": {
+      "date": "2026-03-14",
+      "category": "Common Expressions",
+      "concepts": [
+        "finnish language",
+        "food",
+        "phrases",
+        "vocabulary",
+        "restaurant"
+      ],
+      "metadata": {
+        "title": "Sano Se Suomeksi! Finnish Foodie Phrases You Need",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Finnish Food",
+          "Common Expressions",
+          "Travel Phrases]"
+        ]
+      },
+      "recorded_at": "2026-03-10T19:57:52.822754"
+    },
+    "\"Terve! Hei! Mitä kuuluu?: Mastering Finnish Greetings Beyond 'Hello'\"": {
+      "date": "2026-03-15",
+      "category": "Greetings and Introductions",
+      "concepts": [
+        "finnish greetings",
+        "mitä kuuluu",
+        "informal greetings",
+        "cultural context",
+        "conversational starters"
+      ],
+      "metadata": {
+        "title": "Terve! Hei! Mitä kuuluu?: Finnish Greetings Beyond 'Hello'",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Greetings",
+          "Finnish Culture",
+          "Learn Finnish",
+          "Visit Finland",
+          "Finnish Language",
+          "Finnish Phrases]"
+        ]
+      },
+      "recorded_at": "2026-03-10T19:58:44.597631"
+    },
+    "\"Decoding Finnish Table Manners: A Beginner's Guide to Ruokapöytäetiketti\"": {
+      "date": "2026-03-16",
+      "category": "Common Expressions",
+      "concepts": [
+        "table manners",
+        "ruokapöytäetiketti",
+        "finnish etiquette",
+        "dining customs",
+        "eating habits"
+      ],
+      "metadata": {
+        "title": "Decoding Finnish Table Manners: A Beginner's Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Culture",
+          "Table Manners",
+          "Etiquette",
+          "Food",
+          "Visit Finland",
+          "Common Expressions",
+          "Finnish Language]"
+        ]
+      },
+      "recorded_at": "2026-03-10T19:59:41.553039"
+    },
+    "\"Numbers in Your Pocket: Using Finnish Numbers When Shopping\"": {
+      "date": "2026-03-17",
+      "category": "Numbers and Counting",
+      "concepts": [
+        "finnish numbers",
+        "shopping",
+        "price",
+        "quantity",
+        "money"
+      ],
+      "metadata": {
+        "title": "Numbers in Your Pocket: Finnish Shopping Guide",
+        "level": "A1-A2",
+        "tags": [
+          "[Numbers in Your Pocket: Using Finnish Numbers When Shopping",
+          "Learn Finnish",
+          "Finnish Language",
+          "Finnish Numbers",
+          "Shopping in Finland",
+          "Finnish Culture]"
+        ]
+      },
+      "recorded_at": "2026-03-10T20:00:41.768439"
     }
   }
 }

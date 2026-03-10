@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import { getBlogPosts } from "@/lib/blog";
 import type { Metadata } from "next";
 
+const POSTS_PER_PAGE = 10;
+
 export const metadata: Metadata = {
   title: "Blog - Kielo",
   description:
@@ -19,8 +21,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
-  const posts = getBlogPosts();
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const params = await searchParams;
+  const allPosts = getBlogPosts();
+  const currentPage = Math.max(1, parseInt(params.page || "1", 10) || 1);
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  const safeCurrentPage = Math.min(currentPage, totalPages || 1);
+
+  const startIndex = (safeCurrentPage - 1) * POSTS_PER_PAGE;
+  const posts = allPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
     <>
@@ -79,6 +92,92 @@ export default function BlogPage() {
               </div>
             )}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <nav
+              aria-label="Blog pagination"
+              className="mt-10 flex items-center justify-center gap-2"
+            >
+              {/* Previous */}
+              {safeCurrentPage > 1 ? (
+                <Link
+                  href={safeCurrentPage === 2 ? "/blog" : `/blog?page=${safeCurrentPage - 1}`}
+                  className="px-4 py-2 rounded-lg bg-white shadow-sm border border-gray-200 text-[#374151] hover:border-[#898bdb]/40 hover:text-[#898bdb] transition-colors font-medium text-sm"
+                >
+                  ← Prev
+                </Link>
+              ) : (
+                <span className="px-4 py-2 rounded-lg bg-gray-50 text-gray-300 border border-gray-100 font-medium text-sm cursor-not-allowed">
+                  ← Prev
+                </span>
+              )}
+
+              {/* Page numbers */}
+              {(() => {
+                const pages: (number | "ellipsis-start" | "ellipsis-end")[] = [];
+                if (totalPages <= 7) {
+                  for (let i = 1; i <= totalPages; i++) pages.push(i);
+                } else {
+                  pages.push(1);
+                  if (safeCurrentPage > 3) pages.push("ellipsis-start");
+                  const start = Math.max(2, safeCurrentPage - 1);
+                  const end = Math.min(totalPages - 1, safeCurrentPage + 1);
+                  for (let i = start; i <= end; i++) pages.push(i);
+                  if (safeCurrentPage < totalPages - 2) pages.push("ellipsis-end");
+                  pages.push(totalPages);
+                }
+
+                return pages.map((page) => {
+                  if (typeof page === "string") {
+                    return (
+                      <span
+                        key={page}
+                        className="px-2 py-2 text-gray-400 text-sm select-none"
+                      >
+                        …
+                      </span>
+                    );
+                  }
+                  const isActive = page === safeCurrentPage;
+                  return (
+                    <Link
+                      key={page}
+                      href={page === 1 ? "/blog" : `/blog?page=${page}`}
+                      className={`w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium transition-colors ${isActive
+                          ? "bg-[#898bdb] text-white shadow-sm"
+                          : "bg-white shadow-sm border border-gray-200 text-[#374151] hover:border-[#898bdb]/40 hover:text-[#898bdb]"
+                        }`}
+                    >
+                      {page}
+                    </Link>
+                  );
+                });
+              })()}
+
+              {/* Next */}
+              {safeCurrentPage < totalPages ? (
+                <Link
+                  href={`/blog?page=${safeCurrentPage + 1}`}
+                  className="px-4 py-2 rounded-lg bg-white shadow-sm border border-gray-200 text-[#374151] hover:border-[#898bdb]/40 hover:text-[#898bdb] transition-colors font-medium text-sm"
+                >
+                  Next →
+                </Link>
+              ) : (
+                <span className="px-4 py-2 rounded-lg bg-gray-50 text-gray-300 border border-gray-100 font-medium text-sm cursor-not-allowed">
+                  Next →
+                </span>
+              )}
+            </nav>
+          )}
+
+          {/* Post count info */}
+          {totalPages > 1 && (
+            <p className="mt-4 text-center text-sm text-[#6B7280]">
+              Showing {startIndex + 1}–{Math.min(startIndex + POSTS_PER_PAGE, allPosts.length)} of{" "}
+              {allPosts.length} posts
+            </p>
+          )}
 
           <div className="mt-10 pt-6 text-center">
             <Link

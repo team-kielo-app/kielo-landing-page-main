@@ -43,8 +43,31 @@ FINNISH_LEVELS = ["A1", "A2"]
 DEFAULT_LEVEL = "A1-A2"
 
 # Topic categories for A1-A2 Finnish
+# Ordered by content mix priority: Learning (60%) first, then Culture (40%)
 TOPIC_CATEGORIES = [
-    # Culture & Lifestyle
+    # Language Learning & Practical Tips (60% of content)
+    "Basic Grammar Tips",
+    "Common Expressions",
+    "Greetings and Introductions",
+    "Numbers and Counting",
+    "Pronunciation and Phonetics",
+    "Everyday Conversations",
+    "Reading Finnish Signs and Labels",
+    "Finnish Verb Conjugation Basics",
+    "Finnish Cases Made Simple",
+    "Mistakes Beginners Make",
+    "Vocabulary Building Strategies",
+    "Family and Relationships",
+    "Time and Calendar",
+    "Weather and Seasons",
+    "Daily Routines in Finland",
+    "Shopping and Money",
+    "Work and Professions",
+    "Hobbies and Free Time",
+    "Home and Living",
+    "Health and Well-being",
+
+    # Culture & Lifestyle (40% of content)
     "Finnish Culture and Traditions",
     "Travel and Tourism in Finland",
     "Finnish Food and Dining",
@@ -54,23 +77,48 @@ TOPIC_CATEGORIES = [
     "Finnish Design and Arts",
     "Famous Finnish People",
     "Cities and Places to Visit",
-    
-    # Practical Life
+]
+
+# Content mix: determines the ratio of learning-focused vs culture-focused posts
+CONTENT_MIX = {
+    "learning": 0.6,  # 60% practical language learning tips
+    "culture": 0.4,   # 40% culture & lifestyle
+}
+
+# Categories grouped by content type (used for topic selection)
+LEARNING_CATEGORIES = [
+    "Basic Grammar Tips",
+    "Common Expressions",
+    "Greetings and Introductions",
+    "Numbers and Counting",
+    "Pronunciation and Phonetics",
+    "Everyday Conversations",
+    "Reading Finnish Signs and Labels",
+    "Finnish Verb Conjugation Basics",
+    "Finnish Cases Made Simple",
+    "Mistakes Beginners Make",
+    "Vocabulary Building Strategies",
+    "Family and Relationships",
+    "Time and Calendar",
+    "Weather and Seasons",
     "Daily Routines in Finland",
     "Shopping and Money",
     "Work and Professions",
     "Hobbies and Free Time",
     "Home and Living",
     "Health and Well-being",
-    
-    # Language Basics
-    "Greetings and Introductions",
-    "Numbers and Counting",
-    "Family and Relationships",
-    "Time and Calendar",
-    "Weather and Seasons",
-    "Basic Grammar Tips",
-    "Common Expressions",
+]
+
+CULTURE_CATEGORIES = [
+    "Finnish Culture and Traditions",
+    "Travel and Tourism in Finland",
+    "Finnish Food and Dining",
+    "Nature and Outdoors",
+    "Finnish Lifestyle and Society",
+    "Sauna Culture",
+    "Finnish Design and Arts",
+    "Famous Finnish People",
+    "Cities and Places to Visit",
 ]
 
 # Blog post template settings
