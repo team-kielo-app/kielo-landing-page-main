@@ -38,7 +38,14 @@
     "\"Sano Se Suomeksi! Essential Phrases for Finnish Foodies\"",
     "\"Terve! Hei! Mitä kuuluu?: Mastering Finnish Greetings Beyond 'Hello'\"",
     "\"Decoding Finnish Table Manners: A Beginner's Guide to Ruokapöytäetiketti\"",
-    "\"Numbers in Your Pocket: Using Finnish Numbers When Shopping\""
+    "\"Numbers in Your Pocket: Using Finnish Numbers When Shopping\"",
+    "\"Metsäretki: Your First Finnish Forest Adventure - A Beginner's Guide\"",
+    "\"Finnish Pronunciation: Taming the Toughest Sounds\"",
+    "\"Isänpäivä ja Äitienpäivä: Talking About Parents With Love (And Finnish Cases!)\"",
+    "\"Finnish 'Olla' vs. 'Olla olemassa': Mastering Existence in Finnish\"",
+    "\"Pekoni ei ole Bacon! Finnish Loanwords: Tricky Translations and Pronunciation Pitfalls\"",
+    "\"Shopping Small: Essential Finnish for Supporting Local Businesses\"",
+    "\"Puhu Puhelimeen! - Mastering Finnish Phone Calls\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -965,6 +972,175 @@
         ]
       },
       "recorded_at": "2026-03-10T20:00:41.768439"
+    },
+    "\"Metsäretki: Your First Finnish Forest Adventure - A Beginner's Guide\"": {
+      "date": "2026-03-20",
+      "category": "Nature and Outdoors",
+      "concepts": [
+        "forest",
+        "nature",
+        "outdoors",
+        "beginner",
+        "finland"
+      ],
+      "metadata": {
+        "title": "Metsäretki: Your First Finnish Forest Adventure",
+        "level": "A1-A2",
+        "tags": [
+          "[Metsäretki",
+          "Finnish Culture",
+          "Visit Finland",
+          "Nature",
+          "Outdoors",
+          "Finnish Language",
+          "Travel]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:10:58.271969"
+    },
+    "\"Finnish Pronunciation: Taming the Toughest Sounds\"": {
+      "date": "2026-03-21",
+      "category": "Pronunciation and Phonetics",
+      "concepts": [
+        "finnish pronunciation",
+        "difficult sounds",
+        "phonetics",
+        "vowel harmony",
+        "consonant gradation"
+      ],
+      "metadata": {
+        "title": "Finnish Pronunciation: Taming the Toughest Sounds",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Pronunciation",
+          "Learn Finnish",
+          "Finnish Language",
+          "Finnish Phonetics",
+          "Vowel Sounds]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:11:52.121421"
+    },
+    "\"Isänpäivä ja Äitienpäivä: Talking About Parents With Love (And Finnish Cases!)\"": {
+      "date": "2026-03-22",
+      "category": "Finnish Cases Made Simple / Family and Relationships",
+      "concepts": [
+        "isänpäivä",
+        "äitienpäivä",
+        "father's day",
+        "mother's day",
+        "family"
+      ],
+      "metadata": {
+        "title": "Isänpäivä ja Äitienpäivä: Finnish for Parents With Love",
+        "level": "A1-A2",
+        "tags": [
+          "[Isänpäivä",
+          "Äitienpäivä",
+          "Learn Finnish",
+          "Finnish Language",
+          "Family",
+          "Relationships",
+          "Finnish Cases]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:12:48.270328"
+    },
+    "\"Finnish 'Olla' vs. 'Olla olemassa': Mastering Existence in Finnish\"": {
+      "date": "2026-03-23",
+      "category": "Basic Grammar Tips",
+      "concepts": [
+        "olla",
+        "olla olemassa",
+        "existence",
+        "being",
+        "finnish verb"
+      ],
+      "metadata": {
+        "title": "Finnish 'Olla' vs. 'Olla olemassa': Existence Explained",
+        "level": "A1-A2",
+        "tags": [
+          "[Olla",
+          "Olla olemassa",
+          "Learn Finnish",
+          "Finnish Language",
+          "Finnish Grammar",
+          "Verbs",
+          "Existence]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:13:44.669474"
+    },
+    "\"Pekoni ei ole Bacon! Finnish Loanwords: Tricky Translations and Pronunciation Pitfalls\"": {
+      "date": "2026-03-24",
+      "category": "Mistakes Beginners Make",
+      "concepts": [
+        "loanwords",
+        "false friends",
+        "pekon",
+        "bacon",
+        "pronunciation"
+      ],
+      "metadata": {
+        "title": "Pekoni ei ole Bacon! Finnish Loanwords & Tricky Translations",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Language",
+          "Learn Finnish",
+          "Finnish Loanwords",
+          "Beginner Finnish",
+          "Tricky Translations",
+          "Finnish Vocabulary]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:14:41.841798"
+    },
+    "\"Shopping Small: Essential Finnish for Supporting Local Businesses\"": {
+      "date": "2026-03-25",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "shopping small",
+        "local business",
+        "support",
+        "finnish language",
+        "everyday conversation"
+      ],
+      "metadata": {
+        "title": "Shopping Small: Essential Finnish & Supporting Local",
+        "level": "A1-A2",
+        "tags": [
+          "[Shopping Small",
+          "Finnish Culture",
+          "Visit Finland",
+          "Everyday Conversations",
+          "Finnish Language",
+          "Local Business]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:15:37.617888"
+    },
+    "\"Puhu Puhelimeen! - Mastering Finnish Phone Calls\"": {
+      "date": "2026-03-26",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "phone calls",
+        "puhelin",
+        "communication",
+        "business",
+        "etiquette"
+      ],
+      "metadata": {
+        "title": "Puhu Puhelimeen! - Mastering Finnish Phone Calls",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Phone Calls",
+          "Everyday Conversations",
+          "Finnish Grammar]"
+        ]
+      },
+      "recorded_at": "2026-03-19T16:16:25.772208"
     }
   }
 }
