@@ -45,7 +45,14 @@
     "\"Finnish 'Olla' vs. 'Olla olemassa': Mastering Existence in Finnish\"",
     "\"Pekoni ei ole Bacon! Finnish Loanwords: Tricky Translations and Pronunciation Pitfalls\"",
     "\"Shopping Small: Essential Finnish for Supporting Local Businesses\"",
-    "\"Puhu Puhelimeen! - Mastering Finnish Phone Calls\""
+    "\"Puhu Puhelimeen! - Mastering Finnish Phone Calls\"",
+    "\"Ask Me! Mastering Question Words in Finnish\"",
+    "\"Sano se suomeksi! - Mastering Everyday Finnish Responses\"",
+    "\"Oikea vai väärä? Spotting Tricky Finnish Word Pairs\"",
+    "\"What Time Is It? Telling Time Like a Finn (and Avoiding Confusing Mistakes)\"",
+    "\"Mitä maksaa? - Finnish for Navigating Prices and Payments\"",
+    "\"Mistä löydän...?\": Mastering \"Where Can I Find...?\" in Finnish",
+    "\"Finnish Place Names: Decode the Landscape (and Learn Vocabulary!)\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -1141,6 +1148,169 @@
         ]
       },
       "recorded_at": "2026-03-19T16:16:25.772208"
+    },
+    "\"Ask Me! Mastering Question Words in Finnish\"": {
+      "date": "2026-03-28",
+      "category": "Common Expressions",
+      "concepts": [
+        "kysymyssanat",
+        "question words",
+        "interrogatives",
+        "finnish grammar",
+        "common expressions"
+      ],
+      "metadata": {
+        "title": "Ask Me! Mastering Question Words in Finnish",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Language",
+          "Learn Finnish",
+          "Question Words",
+          "Finnish Grammar",
+          "Common Expressions",
+          "A1 Finnish]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:25:01.193546"
+    },
+    "\"Sano se suomeksi! - Mastering Everyday Finnish Responses\"": {
+      "date": "2026-03-29",
+      "category": "Common Expressions",
+      "concepts": [
+        "finnish language",
+        "everyday responses",
+        "common expressions",
+        "suomeksi",
+        "practical communication"
+      ],
+      "metadata": {
+        "title": "Sano se suomeksi! Mastering Finnish Responses",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Language",
+          "Finnish Culture",
+          "Common Expressions",
+          "Visit Finland",
+          "Language Learning]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:25:45.718220"
+    },
+    "\"Oikea vai väärä? Spotting Tricky Finnish Word Pairs\"": {
+      "date": "2026-03-30",
+      "category": "Vocabulary Building Strategies",
+      "concepts": [
+        "finnish vocabulary",
+        "word pairs",
+        "confusing words",
+        "language learning",
+        "semantic difference"
+      ],
+      "metadata": {
+        "title": "Oikea vai väärä? Spotting Tricky Finnish Word Pairs",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Vocabulary",
+          "Word Pairs",
+          "Finnish Grammar",
+          "Beginner Finnish]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:26:37.755361"
+    },
+    "\"What Time Is It? Telling Time Like a Finn (and Avoiding Confusing Mistakes)\"": {
+      "date": "2026-03-31",
+      "category": "Basic Grammar Tips",
+      "concepts": [
+        "telling time",
+        "finnish time",
+        "time expressions",
+        "o'clock",
+        "minutes"
+      ],
+      "metadata": {
+        "title": "What Time Is It? Telling Time Like a Finn & Avoiding Mistakes",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Telling Time",
+          "Finnish Grammar",
+          "Basic Finnish]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:27:20.558757"
+    },
+    "\"Mitä maksaa? - Finnish for Navigating Prices and Payments\"": {
+      "date": "2026-04-01",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "prices",
+        "payments",
+        "costs",
+        "finnish language",
+        "everyday transactions"
+      ],
+      "metadata": {
+        "title": "Mitä maksaa? Finnish Prices & Payments - Culture & Language",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Language",
+          "Finnish Culture",
+          "Visit Finland",
+          "Everyday Conversations",
+          "Finnish Phrases]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:28:21.180425"
+    },
+    "\"Mistä löydän...?\": Mastering \"Where Can I Find...?\" in Finnish": {
+      "date": "2026-04-02",
+      "category": "Common Expressions",
+      "concepts": [
+        "location",
+        "finding",
+        "asking directions",
+        "common phrases",
+        "question words"
+      ],
+      "metadata": {
+        "title": "Mistä löydän...?: Find Anything in Finnish!",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Common Expressions",
+          "Finnish for Beginners",
+          "Travel Finnish]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:29:10.884843"
+    },
+    "\"Finnish Place Names: Decode the Landscape (and Learn Vocabulary!)\"": {
+      "date": "2026-04-03",
+      "category": "Vocabulary Building Strategies",
+      "concepts": [
+        "finnish place names",
+        "landscape",
+        "vocabulary",
+        "etymology",
+        "geography"
+      ],
+      "metadata": {
+        "title": "Finnish Place Names: Decode the Landscape & Learn!",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Place Names",
+          "Learn Finnish",
+          "Finnish Language",
+          "Vocabulary",
+          "Finnish Culture]"
+        ]
+      },
+      "recorded_at": "2026-03-27T09:29:57.770236"
     }
   }
 }
