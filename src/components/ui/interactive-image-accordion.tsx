@@ -154,7 +154,7 @@ export function LandingAccordionItem() {
         <div className="flex flex-col md:flex-row-reverse items-center justify-between gap-8 md:gap-12">
           {/* Right Side: Text Content */}
           <div className="w-full md:w-1/2 text-center md:text-right">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-700 leading-relaxed">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-700 leading-relaxed">
               With real news, practical conversations, and smart quizzes, Kielo
               turns language learning into an immersive, fun experience.
             </h2>

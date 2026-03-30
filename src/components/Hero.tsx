@@ -35,6 +35,10 @@ const KieloHero = () => {
       showFooter={false}
       leftLogoSrc="/logo.png"
       className="bg-[#fcfaf2]"
+      storeBadges={{
+        appStoreUrl: "https://apps.apple.com/fi/app/kielo-learn-finnish-with-ai/id6749446603",
+        googlePlayUrl: "https://play.google.com/store/apps/details?id=com.kielo.app&hl=en",
+      }}
     />
   );
 };

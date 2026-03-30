@@ -26,6 +26,10 @@ interface MinimalistHeroProps {
   showFooter?: boolean;
   height?: string;
   leftLogoSrc?: string;
+  storeBadges?: {
+    appStoreUrl: string;
+    googlePlayUrl: string;
+  };
 }
 
 // Helper component for social media icons
@@ -61,6 +65,7 @@ export const MinimalistHero = ({
   showFooter = true,
   height,
   leftLogoSrc,
+  storeBadges,
 }: MinimalistHeroProps) => {
   const logoAltText = logoText ?? "Kielo Logo";
   const logoClassName = leftLogoSrc ? "h-12 md:h-auto" : "";
@@ -69,8 +74,8 @@ export const MinimalistHero = ({
   return (
     <div
       className={cn(
-        "relative flex w-full flex-col items-center justify-start overflow-hidden font-sans",
-        !height && "min-h-[80vh] xl:min-h-[60vh]",
+        "relative flex w-full flex-col items-center justify-start overflow-hidden font-sans pb-12 xl:pb-16",
+        !height && "xl:min-h-0",
         className
       )}
       style={height ? { height } : undefined}
@@ -290,6 +295,29 @@ export const MinimalistHero = ({
               </div>
             )}
           </h1>
+          {storeBadges && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.2 }}
+              className="mt-8 flex items-center justify-center gap-5 xl:justify-start"
+            >
+              <a href={storeBadges.appStoreUrl} aria-label="Download on App Store">
+                <img
+                  src="/app-store.svg"
+                  alt="Download on the App Store"
+                  className="h-[48px] w-[144px] md:h-[56px] md:w-[168px]"
+                />
+              </a>
+              <a href={storeBadges.googlePlayUrl} aria-label="Get it on Google Play">
+                <img
+                  src="/google-play.svg"
+                  alt="Get it on Google Play"
+                  className="h-[48px] w-[162px] md:h-[56px] md:w-[189px]"
+                />
+              </a>
+            </motion.div>
+          )}
         </motion.div>
       </div>
 

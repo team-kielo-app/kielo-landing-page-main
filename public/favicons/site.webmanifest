@@ -16,5 +16,17 @@
     }
   ],
   "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.kielo.app",
+      "id": "com.kielo.app"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/fi/app/kielo-learn-finnish-with-ai/id6749446603"
+    }
+  ]
 }
