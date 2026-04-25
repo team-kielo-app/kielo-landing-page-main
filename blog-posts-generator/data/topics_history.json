@@ -52,7 +52,15 @@
     "\"What Time Is It? Telling Time Like a Finn (and Avoiding Confusing Mistakes)\"",
     "\"Mitä maksaa? - Finnish for Navigating Prices and Payments\"",
     "\"Mistä löydän...?\": Mastering \"Where Can I Find...?\" in Finnish",
-    "\"Finnish Place Names: Decode the Landscape (and Learn Vocabulary!)\""
+    "\"Finnish Place Names: Decode the Landscape (and Learn Vocabulary!)\"",
+    "\"Numbers Beyond Counting: Using Finnish Numerals in Everyday Situations\"",
+    "\"Finnish Small Talk: Beyond 'Mitä kuuluu?' - Mastering Polite Chit-Chat\"",
+    "\"Sneaky Suffixes: Unlocking Finnish with Diminutives\"",
+    "\"Everyday Finnish: Mastering 'Excuse Me' and 'Sorry' in Different Situations\"",
+    "\"Is It *Minä* or *Minut*? Demystifying Finnish Pronoun Forms\"",
+    "\"Sano se Suomeksi! Level Up Your Daily Chores Vocabulary\"",
+    "Finnish Table Setting: More Than Just *Lautasliina* (Napkins!)",
+    "\"Shopping for Souvenirs: Essential Finnish for Buying Gifts\""
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -1311,6 +1319,197 @@
         ]
       },
       "recorded_at": "2026-03-27T09:29:57.770236"
+    },
+    "\"Numbers Beyond Counting: Using Finnish Numerals in Everyday Situations\"": {
+      "date": "2026-04-25",
+      "category": "Numbers and Counting",
+      "concepts": [
+        "finnish numerals",
+        "everyday use",
+        "numbers",
+        "language learning",
+        "practical application"
+      ],
+      "metadata": {
+        "title": "Numbers Beyond Counting: Finnish Culture in Everyday Use",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Numbers",
+          "Finnish Culture",
+          "Visit Finland",
+          "Language Learning",
+          "Everyday Finnish",
+          "Finnish Lifestyle]"
+        ]
+      },
+      "recorded_at": "2026-04-24T09:25:46.749610"
+    },
+    "\"Finnish Small Talk: Beyond 'Mitä kuuluu?' - Mastering Polite Chit-Chat\"": {
+      "date": "2026-04-26",
+      "category": "Common Expressions",
+      "concepts": [
+        "small talk",
+        "finnish culture",
+        "kohteliaisuus",
+        "conversational etiquette",
+        "mitä kuuluu"
+      ],
+      "metadata": {
+        "title": "Finnish Small Talk: Beyond 'Mitä kuuluu?' - Chat Like a Finn",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Small Talk",
+          "Learn Finnish",
+          "Finnish Language",
+          "Common Expressions",
+          "Finnish Culture]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:00:20.558907"
+    },
+    "\"Sneaky Suffixes: Unlocking Finnish with Diminutives\"": {
+      "date": "2026-04-27",
+      "category": "Basic Grammar Tips",
+      "concepts": [
+        "finnish suffixes",
+        "diminutives",
+        "grammar",
+        "language learning",
+        "basic finnish"
+      ],
+      "metadata": {
+        "title": "Sneaky Suffixes: Unlocking Finnish with Diminutives",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Language",
+          "Learn Finnish",
+          "Finnish Grammar",
+          "Diminutives",
+          "Suffixes",
+          "A1 Finnish",
+          "A2 Finnish]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:01:22.922336"
+    },
+    "\"Everyday Finnish: Mastering 'Excuse Me' and 'Sorry' in Different Situations\"": {
+      "date": "2026-04-28",
+      "category": "Common Expressions",
+      "concepts": [
+        "anteeksi",
+        "finland",
+        "excuse me",
+        "sorry",
+        "common phrases"
+      ],
+      "metadata": {
+        "title": "Everyday Finnish: Master Excuse Me & Sorry Like a Native",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Common Expressions",
+          "Excuse Me",
+          "Sorry",
+          "Olen pahoillani]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:02:24.470345"
+    },
+    "\"Is It *Minä* or *Minut*? Demystifying Finnish Pronoun Forms\"": {
+      "date": "2026-04-29",
+      "category": "Finnish Cases Made Simple",
+      "concepts": [
+        "minä",
+        "minut",
+        "pronoun forms",
+        "finnish cases",
+        "nominative"
+      ],
+      "metadata": {
+        "title": "Is It *Minä* or *Minut*? Demystifying Finnish Pronoun Forms",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Cases",
+          "Learn Finnish",
+          "Finnish Language",
+          "Pronouns",
+          "Grammar]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:03:26.284459"
+    },
+    "\"Sano se Suomeksi! Level Up Your Daily Chores Vocabulary\"": {
+      "date": "2026-04-30",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "finnish language",
+        "vocabulary",
+        "daily chores",
+        "housework",
+        "everyday speech"
+      ],
+      "metadata": {
+        "title": "Sano se Suomeksi! Daily Chores Vocabulary",
+        "level": "A1-A2",
+        "tags": [
+          "[Learn Finnish",
+          "Finnish Language",
+          "Daily Chores",
+          "Vocabulary",
+          "Finnish for Beginners]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:04:28.105239"
+    },
+    "Finnish Table Setting: More Than Just *Lautasliina* (Napkins!)": {
+      "date": "2026-05-01",
+      "category": "Common Expressions",
+      "concepts": [
+        "table setting",
+        "finnish culture",
+        "presentation",
+        "etiquette",
+        "dining"
+      ],
+      "metadata": {
+        "title": "Finnish Table Setting: More Than Just *Lautasliina*!",
+        "level": "A1-A2",
+        "tags": [
+          "[Finnish Table Setting",
+          "Finnish Culture",
+          "Table Manners",
+          "Visit Finland",
+          "Common Expressions",
+          "Finnish Language]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:05:29.930823"
+    },
+    "\"Shopping for Souvenirs: Essential Finnish for Buying Gifts\"": {
+      "date": "2026-05-02",
+      "category": "Everyday Conversations",
+      "concepts": [
+        "souvenirs",
+        "gifts",
+        "shopping",
+        "finnish language",
+        "buying"
+      ],
+      "metadata": {
+        "title": "Shopping for Souvenirs: Essential Finnish for Buying Gifts",
+        "level": "A1-A2",
+        "tags": [
+          "[shopping",
+          "souvenirs",
+          "Finnish Culture",
+          "Visit Finland",
+          "language learning",
+          "Finnish language",
+          "travel]"
+        ]
+      },
+      "recorded_at": "2026-04-25T14:06:41.899404"
     }
   }
 }

@@ -8,6 +8,8 @@ from google.genai import types
 from typing import Dict, List, Optional
 import random
 import re
+import time
+from google.genai.errors import ClientError
 
 from .config import (
     GEMINI_API_KEY, TEXT_MODEL, BLOG_SETTINGS, DEFAULT_LEVEL,
@@ -113,13 +115,25 @@ CATEGORY: [category name]
 BRIEF: [2-3 sentence description of what the post will teach/cover]
 """
     
-    response = client.models.generate_content(
-        model=TEXT_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            tools=[types.Tool(google_search=types.GoogleSearch())]
+    try:
+        response = client.models.generate_content(
+            model=TEXT_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())]
+            )
         )
-    )
+    except ClientError as e:
+        if e.code == 429:
+            print("⚠️ Rate limit hit with Google Search grounding. Falling back to standard generation without search...")
+            # Fallback without search grounding
+            response = client.models.generate_content(
+                model=TEXT_MODEL,
+                contents=prompt
+            )
+        else:
+            raise
+            
     text = response.text
     
     # Parse the response
@@ -368,13 +382,24 @@ Provide your response in this EXACT format:
 ---END---
 """
 
-    response = client.models.generate_content(
-        model=TEXT_MODEL,
-        contents=prompt,
-        config=types.GenerateContentConfig(
-            tools=[types.Tool(google_search=types.GoogleSearch())]
+    try:
+        response = client.models.generate_content(
+            model=TEXT_MODEL,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                tools=[types.Tool(google_search=types.GoogleSearch())]
+            )
         )
-    )
+    except ClientError as e:
+        if e.code == 429:
+            print("⚠️ Rate limit hit with Google Search grounding. Falling back to standard generation without search...")
+            response = client.models.generate_content(
+                model=TEXT_MODEL,
+                contents=prompt
+            )
+        else:
+            raise
+            
     text = response.text
     
     # Parse the response
