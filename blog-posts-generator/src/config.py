@@ -27,7 +27,7 @@ IMAGES_DIR.mkdir(exist_ok=True)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # Model settings
-TEXT_MODEL = "gemini-2.0-flash"
+TEXT_MODEL = "gemini-2.5-flash"
 IMAGE_MODEL = "imagen-4.0-generate-001"
 IMAGE_ASPECT_RATIO = "16:9"
 
