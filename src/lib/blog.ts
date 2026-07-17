@@ -51,7 +51,8 @@ export function getBlogPosts(): BlogPost[] {
 
 export function getBlogPost(slug: string): BlogPost | null {
     try {
-        const fullPath = path.join(postsDirectory, `${slug}.mdx`);
+        const decodedSlug = decodeURIComponent(slug);
+        const fullPath = path.join(postsDirectory, `${decodedSlug}.mdx`);
         const fileContents = fs.readFileSync(fullPath, "utf8");
         const { data, content } = matter(fileContents);
 
