@@ -23,10 +23,8 @@ const KieloHero = () => {
         part1: {
           prefix: "Master ",
           rotate: [
-            "Speaking Finnish",
-            "Reading Finnish",
-            "Writing Finnish",
-            "Listening to Finnish",
+            "Finnish 🇫🇮",
+            "Swedish 🇸🇪",
           ],
         },
         part2: "With AI-powered",
