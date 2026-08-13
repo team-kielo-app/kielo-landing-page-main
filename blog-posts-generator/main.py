@@ -9,7 +9,6 @@ import click
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Optional
-import time
 
 import re
 
@@ -211,12 +210,7 @@ def generate(
                 "title": post_data['title'],
                 "file": output_path.name
             })
-            
-        # Add delay to avoid rate limits
-        if i < days - 1:
-            click.echo("\n⏳ Waiting 15 seconds to avoid API rate limits...")
-            time.sleep(15)
-    
+
     # Summary
     click.echo(f"\n{'='*50}")
     click.echo("✨ GENERATION COMPLETE")

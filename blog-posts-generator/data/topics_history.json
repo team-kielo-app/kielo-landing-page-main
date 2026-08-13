@@ -81,7 +81,14 @@
     "Beyond the Books: Mastering Finnish Intonation for Natural Sounding Conversations",
     "Beyond 'Also': Mastering Finnish Particles -kin and -kaan/-kään for Natural Communication",
     "Taming the Trolls: Unlocking Finnish Vowel Sounds Ä and Ö (A Beginner's Guide)",
-    "Löydä unelmiesi vuokra-asunto: Suomen asuntomarkkinoiden sanasto aloittelijoille"
+    "Löydä unelmiesi vuokra-asunto: Suomen asuntomarkkinoiden sanasto aloittelijoille",
+    "Beyond the Chalkboard: Finnish School Vocabulary for Daily Classroom Life",
+    "Building Blocks of Finnish: Unlocking the Power of Compound Nouns",
+    "Finland's Rising Style Stars: Crafting a Sustainable Fashion Future",
+    "Navigating Finnish Nouns: How to Talk About 'A' Cat and 'The' Cat Without Articles",
+    "Crafting Clearer Sentences: A Beginner's Guide to Finnish Adverbs",
+    "Mitä täällä lukee? Deciphering Common Finnish Public Notices for Daily Life",
+    "Mistä pidät? Expressing Likes and Dislikes in Finnish for Beginners"
   ],
   "topic_details": {
     "\"Mustikka-aika! Berry Picking Basics for Beginners\"": {
@@ -2031,6 +2038,173 @@
         ]
       },
       "recorded_at": "2026-07-16T21:24:28.564475"
+    },
+    "Beyond the Chalkboard: Finnish School Vocabulary for Daily Classroom Life": {
+      "date": "2026-08-14",
+      "category": "Vocabulary Building Strategies",
+      "concepts": [
+        "finnish school vocabulary",
+        "daily classroom terms",
+        "finnish educational context",
+        "practical classroom communication"
+      ],
+      "metadata": {
+        "title": "Beyond the Chalkboard: Finnish School Vocabulary",
+        "level": "A1-A2",
+        "tags": [
+          "Learn Finnish",
+          "Finnish Language",
+          "Finnish Vocabulary",
+          "Education",
+          "Classroom Finnish",
+          "A1-A2 Finnish",
+          "Vocabulary Building Strategies"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:44:31.367502"
+    },
+    "Building Blocks of Finnish: Unlocking the Power of Compound Nouns": {
+      "date": "2026-08-15",
+      "category": "Basic Grammar Tips",
+      "concepts": [
+        "compound nouns",
+        "yhdyssanat",
+        "finnish grammar",
+        "word formation",
+        "vocabulary expansion"
+      ],
+      "metadata": {
+        "title": "Building Blocks of Finnish: Unlocking Compound Nouns",
+        "level": "A1-A2",
+        "tags": [
+          "Finnish Language",
+          "Finnish Culture",
+          "Compound Nouns",
+          "Grammar Tips",
+          "Visit Finland",
+          "Language Learning",
+          "A1-A2 Finnish"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:46:13.032795"
+    },
+    "Finland's Rising Style Stars: Crafting a Sustainable Fashion Future": {
+      "date": "2026-08-16",
+      "category": "Finnish Design and Arts",
+      "concepts": [
+        "finnish fashion",
+        "sustainable fashion",
+        "emerging designers",
+        "eco-conscious design"
+      ],
+      "metadata": {
+        "title": "Finland's Rising Style Stars: Sustainable Fashion's Future",
+        "level": "A1-A2",
+        "tags": [
+          "Finnish Culture",
+          "Sustainable Fashion",
+          "Finnish Design",
+          "Visit Finland",
+          "Slow Fashion",
+          "Finland Travel",
+          "Language Learning"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:47:58.797520"
+    },
+    "Navigating Finnish Nouns: How to Talk About 'A' Cat and 'The' Cat Without Articles": {
+      "date": "2026-08-17",
+      "category": "Basic Grammar Tips",
+      "concepts": [
+        "finnish nouns",
+        "no articles",
+        "definiteness",
+        "finnish cases"
+      ],
+      "metadata": {
+        "title": "Navigating Finnish Nouns: 'A' Cat, 'The' Cat (No Articles!)",
+        "level": "A1-A2",
+        "tags": [
+          "Learn Finnish",
+          "Finnish Language",
+          "Basic Grammar Tips",
+          "Finnish Nouns",
+          "Cases",
+          "A1-A2"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:49:23.438972"
+    },
+    "Crafting Clearer Sentences: A Beginner's Guide to Finnish Adverbs": {
+      "date": "2026-08-18",
+      "category": "Basic Grammar Tips",
+      "concepts": [
+        "finnish adverbs",
+        "beginner finnish grammar",
+        "sentence clarity"
+      ],
+      "metadata": {
+        "title": "Crafting Clearer Sentences: A Guide to Finnish Adverbs",
+        "level": "A1-A2",
+        "tags": [
+          "Finnish Adverbs",
+          "Learn Finnish",
+          "Finnish Language",
+          "Basic Grammar Tips",
+          "Finnish for Beginners",
+          "Grammar Guide",
+          "Sentence Structure"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:51:12.503806"
+    },
+    "Mitä täällä lukee? Deciphering Common Finnish Public Notices for Daily Life": {
+      "date": "2026-08-19",
+      "category": "Reading Finnish Signs and Labels",
+      "concepts": [
+        "finnish public notices",
+        "finnish signs",
+        "deciphering finnish",
+        "everyday finnish reading"
+      ],
+      "metadata": {
+        "title": "Mitä täällä lukee? Deciphering Finnish Public Notices",
+        "level": "A1-A2",
+        "tags": [
+          "Finnish Culture",
+          "Visit Finland",
+          "Finnish Language",
+          "Reading Signs",
+          "Finland Travel",
+          "Daily Life",
+          "Language Learning"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:52:35.925347"
+    },
+    "Mistä pidät? Expressing Likes and Dislikes in Finnish for Beginners": {
+      "date": "2026-08-20",
+      "category": "Common Expressions",
+      "concepts": [
+        "likes and dislikes",
+        "finnish expressions",
+        "mistä pidät",
+        "finnish for beginners"
+      ],
+      "metadata": {
+        "title": "Mistä pidät? Expressing Likes and Dislikes in Finnish for Beginners",
+        "level": "A1-A2",
+        "tags": [
+          "Mistä pidät?",
+          "Finnish Culture",
+          "Visit Finland",
+          "Common Expressions",
+          "Language Learning",
+          "Finnish Lifestyle",
+          "Travel Finland"
+        ]
+      },
+      "recorded_at": "2026-08-13T14:54:28.947794"
     }
   }
 }

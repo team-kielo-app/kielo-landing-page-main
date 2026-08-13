@@ -328,7 +328,7 @@ Create {post_style}. The content should be in English and very readable, with Fi
 - **Maximum 60 characters** (strict!)
 - Include the primary keyword near the BEGINNING
 - Make it inviting and descriptive
-- Example: {"'Finnish Greetings: Master Hei, Moi & More'" if content_type == 'learning' else "'Finnish Sauna Culture: A Beginner\'s Guide'"}
+- Example: {"'Finnish Greetings: Master Hei, Moi & More'" if content_type == 'learning' else '''"Finnish Sauna Culture: A Beginner's Guide"'''}
 
 ### 2. META DESCRIPTION
 - **~105 characters** (max 120)
