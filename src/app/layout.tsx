@@ -52,6 +52,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/favicons/apple-touch-icon.png", sizes: "180x180" }],
   },
   manifest: "/favicons/site.webmanifest",
+  itunes: {
+    appId: "6749446603",
+  },
   openGraph: {
     url: "https://kielo.app",
     siteName: "Kielo",
@@ -83,6 +86,7 @@ export const metadata: Metadata = {
 };
 
 import Script from "next/script";
+import AppBanner from "@/components/AppBanner";
 
 export default function RootLayout({
   children,
@@ -117,6 +121,7 @@ export default function RootLayout({
           `}
         </Script>
         {children}
+        <AppBanner />
       </body>
     </html>
   );
