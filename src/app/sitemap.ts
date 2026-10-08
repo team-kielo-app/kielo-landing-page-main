@@ -1,44 +1,32 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { LANGUAGE_LIST, SITE_URL } from "@/lib/languages";
+import { allPosts } from "@/lib/site-api";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://kielo.app'
+// Rebuilt with the blog: an hour at most behind a newly published post.
+export const revalidate = 3600;
 
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/about`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/blog`,
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/privacy`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/terms`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.5,
-        },
-        {
-            url: `${baseUrl}/gdpr`,
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 0.5,
-        },
-    ]
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const fixed: MetadataRoute.Sitemap = [
+    { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${SITE_URL}/privacy`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/terms`, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${SITE_URL}/gdpr`, changeFrequency: "yearly", priority: 0.3 },
+  ];
+  const perLanguage = await Promise.all(
+    LANGUAGE_LIST.map(async (language) => {
+      const posts = await allPosts(language.code);
+      return [
+        { url: `${SITE_URL}/${language.slug}`, changeFrequency: "weekly" as const, priority: 0.9 },
+        { url: `${SITE_URL}/${language.slug}/blog`, changeFrequency: "daily" as const, priority: 0.8 },
+        ...posts.map((post) => ({
+          url: `${SITE_URL}/${language.slug}/blog/${post.slug}`,
+          lastModified: post.updated_at,
+          changeFrequency: "monthly" as const,
+          priority: 0.7,
+        })),
+      ];
+    }),
+  );
+  return [...fixed, ...perLanguage.flat()];
 }

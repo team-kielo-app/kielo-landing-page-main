@@ -1,27 +1,29 @@
 import Link from "next/link";
-import KieloNav from "@/components/KieloNav";
+import SiteHeader from "@/components/site/SiteHeader";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Us - Kielo",
   description:
-    "Learn about Kielo, the AI-powered Finnish language learning app. Our mission is to make Finnish accessible and fun for everyone.",
+    "Kielo was made by two immigrants in Finland: an app to practise Finnish and Swedish for the place you live, at your level.",
   openGraph: {
     title: "About Us - Kielo",
     description:
-      "Learn about Kielo, the AI-powered Finnish language learning app. Our mission is to make Finnish accessible and fun for everyone.",
+      "Kielo was made by two immigrants in Finland: an app to practise Finnish and Swedish for the place you live, at your level.",
     url: "https://kielo.app/about",
     siteName: "Kielo",
     type: "website",
+    images: ["/opengraph-image"],
   },
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
-      <div className="bg-[#fcfaf2] w-full flex justify-center px-4 md:px-0">
-        <KieloNav />
+      <div className="bg-[#fcfaf2]">
+        <SiteHeader />
       </div>
       <main className="bg-[#fcfaf2] min-h-screen py-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

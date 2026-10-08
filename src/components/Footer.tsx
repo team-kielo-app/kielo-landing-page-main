@@ -1,101 +1,51 @@
-import { SocialLinks } from "@/components/ui/social-links";
+import Image from "next/image";
 import Link from "next/link";
+import { LANGUAGE_LIST, type SiteLanguage } from "@/lib/languages";
+import FollowBand from "@/components/site/FollowBand";
 
-const socials = [
-  {
-    name: "Contact Us",
-    image: "/email.png",
-    handle: "connect@kielo.app",
-    url: "mailto:connect@kielo.app",
-  },
-  {
-    name: "TikTok",
-    image: "/tiktok.png",
-    handle: "@tiktok.kielo.app",
-    url: "https://www.tiktok.com/@tiktok.kielo.app",
-  },
-  {
-    name: "Instagram",
-    image: "/instagram.png",
-    handle: "@kielo.app",
-    url: "https://instagram.com/kielo.app",
-  },
-  {
-    name: "YouTube",
-    image: "/youtube.png",
-    handle: "@kielo_app",
-    url: "https://youtube.com/@kielo_app",
-  },
-];
+const linkClass = "text-[#4A5060] hover:text-[#1F2330] hover:underline";
 
-export default function Footer() {
+/** On a language's pages, that language's accounts; elsewhere, every language's. */
+export default function Footer({ language }: { language?: SiteLanguage }) {
+  const languages = language ? [language] : LANGUAGE_LIST;
+  const other = language ? LANGUAGE_LIST.find((l) => l.code !== language.code) : undefined;
   return (
-    <footer className="w-full bg-[#fcfaf2] relative z-10 flex flex-col items-center px-4 md:px-8">
-      <div className="w-full max-w-[1280px] py-12 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
-        {/* Left Side: Mascot/QR Image */}
-        <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-          <img
-            src="/images/scan-me.png"
-            alt="Scan Me"
-            className="w-full max-w-[400px] md:max-w-[500px] h-auto object-contain"
-          />
-        </div>
-
-        {/* Right Side: Links */}
-        <div className="w-full md:w-1/2 flex flex-col items-center md:items-start gap-8 md:gap-16">
-          <div className="w-full flex justify-center md:justify-start">
-            <SocialLinks
-              socials={socials}
-              className="justify-center md:justify-start gap-6 md:gap-10"
+    <footer className="relative z-10 bg-[#FCFAF2]">
+      <FollowBand languages={languages} />
+      <div className="border-t border-[#ECEAE2]">
+        <div className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center justify-between gap-x-10 gap-y-5 px-4 py-8 text-[15px] text-[#6A7080] md:px-6">
+          <span className="flex flex-col gap-1">
+            <span>© {new Date().getFullYear()} Kielo</span>
+            {other ? (
+              <Link href={`/${other.slug}`} className={linkClass}>
+                Learning {other.name} instead?
+              </Link>
+            ) : null}
+          </span>
+          <a
+            href="mailto:connect@kielo.app"
+            className="group flex items-center gap-3 text-[#1F2330] hover:text-[#1F2330]"
+          >
+            <Image
+              src="/email.png"
+              alt=""
+              width={80}
+              height={80}
+              className="h-10 w-10 -rotate-6 transition-transform duration-300 group-hover:rotate-0"
             />
-          </div>
-
-          <nav className="flex flex-col items-center md:items-start gap-3 md:gap-4">
-            <Link
-              href="/about"
-              className="text-gray-600 hover:text-[var(--color-kielo-purple)] hover:underline font-bold text-xl md:text-3xl transition-colors duration-200"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/blog"
-              className="text-gray-600 hover:text-[var(--color-kielo-purple)] hover:underline font-bold text-xl md:text-3xl transition-colors duration-200"
-            >
-              Blog
-            </Link>
-          </nav>
+            <span className="flex flex-col leading-tight">
+              <span className="text-xs font-bold uppercase tracking-[0.08em] text-[#6A7080]">Write to us</span>
+              <span className="font-semibold group-hover:underline">connect@kielo.app</span>
+            </span>
+          </a>
+          <span className="flex flex-wrap gap-x-5 gap-y-1">
+            <Link href="/about" className={linkClass}>About</Link>
+            <Link href="/privacy" className={linkClass}>Privacy</Link>
+            <Link href="/terms" className={linkClass}>Terms</Link>
+            <Link href="/gdpr" className={linkClass}>Personal data</Link>
+          </span>
         </div>
       </div>
-
-      {/* Privacy Links - Centered */}
-      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 pb-8 md:mt-0 text-sm md:text-base font-medium text-gray-500">
-        <Link
-          href="/privacy"
-          className="hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200"
-        >
-          Privacy
-        </Link>
-        <span className="opacity-50">•</span>
-        <Link
-          href="/terms"
-          className="hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200"
-        >
-          Terms
-        </Link>
-        <span className="opacity-50">•</span>
-        <Link
-          href="/gdpr"
-          className="hover:text-[var(--color-kielo-purple)] hover:underline transition-all duration-200"
-        >
-          Personal Data & GDPR
-        </Link>
-      </div>
-
-      {/* Copyright - Centered at bottom */}
-      <p className="text-gray-500 text-sm opacity-60 pb-8 font-medium text-center">
-        © {new Date().getFullYear()} Kielo. All rights reserved.
-      </p>
     </footer>
   );
 }
-

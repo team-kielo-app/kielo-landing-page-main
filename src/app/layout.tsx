@@ -18,31 +18,22 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kielo.app"),
-  title: "Kielo - Master Finnish Fast with AI-Powered Conversations",
+  title: "Kielo – Learn Finnish and Swedish for the place you live",
   description:
-    "Kielo is the best way to learn Finnish and prepare for your YKI test using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
+    "Learn Finnish or Swedish for the place you live: rehearse conversations out loud, read real news at your level and keep the words you are about to lose.",
   keywords: [
-    "Finnish",
-    "language learning",
-    "AI",
-    "Finland",
     "learn Finnish",
-    "Finnish language",
-    "Finnish language learning",
+    "learn Swedish",
     "Finnish language app",
-    "Finnish app",
-    "language app",
+    "Swedish language app",
     "YKI test",
-    "YKI",
-    "suomenkieli",
-    "suomi",
+    "SFI",
+    "language learning",
+    "AI language tutor",
     "suomen kieli",
-    "suomenkielitutkimus"
+    "svenska",
   ],
   authors: [{ name: "Kielo" }],
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: [
       { url: "/favicons/favicon-96x96.png", sizes: "96x96", type: "image/png" },
@@ -60,24 +51,15 @@ export const metadata: Metadata = {
     siteName: "Kielo",
     locale: "en_US",
     type: "website",
-    title: "Kielo - Master Finnish Fast with AI-Powered Conversations",
+    title: "Kielo – Learn Finnish and Swedish for the place you live",
     description:
-      "Kielo is the best way to learn Finnish and prepare for your YKI test using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
-    images: [
-      {
-        url: "/og-image-optimized.png",
-        width: 1200,
-        height: 630,
-        alt: "Kielo App - Master Finnish Fast",
-      },
-    ],
+      "Learn Finnish or Swedish for the place you live: rehearse conversations out loud, read real news at your level and keep the words you are about to lose.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kielo - Master Finnish Fast with AI-Powered Conversations",
+    title: "Kielo – Learn Finnish and Swedish for the place you live",
     description:
-      "Kielo is the best way to learn Finnish and prepare for your YKI test using immersive AI conversations. Practice speaking, grammar, and vocabulary instantly.",
-    images: ["/og-image-optimized.png"],
+      "Learn Finnish or Swedish for the place you live: rehearse conversations out loud, read real news at your level and keep the words you are about to lose.",
   },
   robots: {
     index: true,
