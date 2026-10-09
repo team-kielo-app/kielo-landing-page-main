@@ -1,13 +1,14 @@
 import { SITE_LANGUAGES, type LearningLanguageCode, type SiteLanguage } from "./languages";
 
 /**
- * Posts and page copy from the Kielo CMS (cms.kielo.app/api/v3/public/site),
- * read on the server. Every fetch is tagged with its language; publishing in
+ * Published posts and page copy, read on the server from Kielo's public API
+ * (backend.kielo.app/api/v3/public/site, served by content-service; the CMS
+ * only takes admin traffic). Every fetch is tagged with its language; publishing in
  * admin calls /api/revalidate, which expires that tag, and pages also
  * refresh every REVALIDATE_SECONDS on their own.
  */
 
-const API_ORIGIN = (process.env.SITE_API_ORIGIN || "https://cms.kielo.app").replace(/\/+$/, "");
+const API_ORIGIN = (process.env.SITE_API_ORIGIN || "https://backend.kielo.app").replace(/\/+$/, "");
 const REVALIDATE_SECONDS = 600;
 
 export const siteTag = (code: LearningLanguageCode) => `site:${code}`;
@@ -53,12 +54,12 @@ async function get<T>(path: string, code: LearningLanguageCode, params: Record<s
       next: { revalidate: REVALIDATE_SECONDS, tags: [siteTag(code)] },
     });
     if (res.status === 404) return null;
-    if (!res.ok) throw new Error(`CMS ${res.status} for ${url.pathname}`);
+    if (!res.ok) throw new Error(`site API ${res.status} for ${url.pathname}`);
     const body = (await res.json()) as { data?: T };
     return body.data ?? null;
   } catch (error) {
     console.error("site-api:", error instanceof Error ? error.message : error);
-    // At build time a page still renders without the CMS (built-in copy, no
+    // At build time a page still renders without the API (built-in copy, no
     // posts) and refreshes within REVALIDATE_SECONDS. Later, a failed refresh
     // must throw: Next keeps serving the last good page instead of replacing
     // it with an empty blog or a 404 for a live post.
@@ -67,18 +68,17 @@ async function get<T>(path: string, code: LearningLanguageCode, params: Record<s
   }
 }
 
-export async function listPosts(code: LearningLanguageCode, page = 1, perPage = 10): Promise<PostPage> {
-  const data = await get<PostPage>("/posts", code, {
-    limit: String(perPage),
-    offset: String((page - 1) * perPage),
-  });
-  return { posts: data?.posts ?? [], total: data?.total ?? 0 };
+/** Every published post, newest first (the API returns the whole list). */
+export async function allPosts(code: LearningLanguageCode): Promise<PostSummary[]> {
+  const data = await get<PostPage>("/posts", code);
+  return data?.posts ?? [];
 }
 
-/** Every published post, for the sitemap and static generation. */
-export async function allPosts(code: LearningLanguageCode): Promise<PostSummary[]> {
-  const data = await get<PostPage>("/posts", code, { limit: "all" });
-  return data?.posts ?? [];
+/** One numbered blog page, cut from the full list. */
+export async function listPosts(code: LearningLanguageCode, page = 1, perPage = 10): Promise<PostPage> {
+  const posts = await allPosts(code);
+  const start = (Math.max(page, 1) - 1) * perPage;
+  return { posts: posts.slice(start, start + perPage), total: posts.length };
 }
 
 export async function getPost(code: LearningLanguageCode, slug: string): Promise<Post | null> {

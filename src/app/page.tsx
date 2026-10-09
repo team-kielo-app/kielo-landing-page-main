@@ -79,9 +79,6 @@ export default function Home() {
 
         <section className="mx-auto flex w-full max-w-[1240px] flex-wrap items-center gap-14 px-4 pb-20 pt-6 md:px-6 md:pt-10">
           <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-6">
-            <span className="self-start rounded-full bg-[#ECEBFB] px-3.5 py-2 text-xs font-bold uppercase tracking-[0.08em] text-[#3B3E9A] md:text-sm">
-              For people who live in Finland or Sweden
-            </span>
             <h1 className="m-0 text-[clamp(40px,6vw,76px)] font-extrabold leading-none tracking-[-0.035em]">
               Stop being the one they switch to English for.
             </h1>

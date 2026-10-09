@@ -9,8 +9,8 @@ export type ScreenKey = "speak" | "read" | "watch" | "review" | "path" | "home";
 export interface AppScreen {
   key: ScreenKey;
   tag: string;
-  /** Dot colour next to the tag, the colour the feature uses in the app. */
-  dot: string;
+  /** The feature's 3D icon from the app, shown next to the tag. */
+  icon: string;
   src: string;
   alt: string;
   caption: string;
@@ -22,7 +22,7 @@ export const FINNISH_SCREENS: Record<ScreenKey, AppScreen> = {
   speak: {
     key: "speak",
     tag: "Speak",
-    dot: "#0EA5A8",
+    icon: "/images/icons/3d-speech-bubbles.webp",
     src: "/images/app/speak-fi.png",
     alt: "Kielo conversation scenario: Musiikista puhuminen, A1, 3 minutes",
     caption: "Musiikista puhuminen · A1 · 3 min · culture, leisure: one of the scenarios in the app.",
@@ -31,7 +31,7 @@ export const FINNISH_SCREENS: Record<ScreenKey, AppScreen> = {
   read: {
     key: "read",
     tag: "Read",
-    dot: "#C2185B",
+    icon: "/images/icons/3d-newspaper.webp",
     src: "/images/app/read-fi.png",
     alt: "Kielo reader showing a Finnish news story with the passive voice explained",
     caption: "seurataan → passiivi, A2: explained inside a news story, not in a table.",
@@ -40,7 +40,7 @@ export const FINNISH_SCREENS: Record<ScreenKey, AppScreen> = {
   watch: {
     key: "watch",
     tag: "Watch",
-    dot: "#1F2330",
+    icon: "/images/icons/3d-phone-play.webp",
     src: "/images/app/watch-fi.png",
     alt: "KieloTV video with a Finnish word glossed on the frame",
     caption: "tunnelma (noun) → atmosphere, glossed on the frame it was spoken in.",
@@ -49,7 +49,7 @@ export const FINNISH_SCREENS: Record<ScreenKey, AppScreen> = {
   review: {
     key: "review",
     tag: "Review",
-    dot: "#6C5CE7",
+    icon: "/images/icons/3d-flashcards.webp",
     src: "/images/app/review-fi.png",
     alt: "Kielo review question on the Finnish verb hukkua with four options",
     caption: "hukkua · Recognise → Recall: the review queue, not a sample deck.",
@@ -58,7 +58,7 @@ export const FINNISH_SCREENS: Record<ScreenKey, AppScreen> = {
   path: {
     key: "path",
     tag: "Path",
-    dot: "#E9AE32",
+    icon: "/images/icons/3d-open-book.webp",
     src: "/images/app/path-fi.png",
     alt: "Kielo course map for Everyday Finnish",
     caption: "Everyday Finnish · chapters and lessons to A2 · next: Sorry & You’re Welcome.",
@@ -67,7 +67,7 @@ export const FINNISH_SCREENS: Record<ScreenKey, AppScreen> = {
   home: {
     key: "home",
     tag: "Home",
-    dot: "#6C5CE7",
+    icon: "/images/icons/3d-hourglass-refresh.webp",
     src: "/images/app/home-fi.png",
     alt: "Kielo home screen with the daily plan, review and the Everyday Finnish course",
     caption: "A test account’s real home: its words, its fading reviews, its lessons. Nothing invented.",

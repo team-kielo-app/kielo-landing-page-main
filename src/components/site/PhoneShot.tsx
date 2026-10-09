@@ -5,11 +5,11 @@ import { SITE_LANGUAGES, type LearningLanguageCode } from "@/lib/languages";
 const SHOT_WIDTH = 780;
 const SHOT_HEIGHT = 1605;
 
-/** The tag above a screen: the feature's colour dot and name. */
+/** The tag above a screen: the feature's 3D icon from the app and its name. */
 export function ScreenTag({ screen, className = "text-[#5C6473]" }: { screen: AppScreen; className?: string }) {
   return (
-    <span className={`flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] ${className}`}>
-      <span className="h-2 w-2 rounded-full" style={{ background: screen.dot }} />
+    <span className={`flex items-center gap-2.5 text-xs font-bold uppercase tracking-[0.12em] ${className}`}>
+      <Image src={screen.icon} alt="" width={40} height={40} sizes="40px" className="h-10 w-10 shrink-0" />
       {screen.tag}
     </span>
   );
