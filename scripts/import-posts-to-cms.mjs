@@ -38,6 +38,17 @@ if (!TOKEN) {
   process.exit(1);
 }
 
+// Four generated posts wrapped the tag list in literal brackets, so the
+// title became the first tag ("[Retkelle! Packing…") and the CMS refuses
+// tags over 40 characters.
+function cleanTags(tags, title) {
+  if (!Array.isArray(tags)) return [];
+  const t = String(title || "").toLowerCase();
+  return tags
+    .map((tag) => String(tag).replace(/^\[|\]$/g, "").trim())
+    .filter((tag) => tag && tag.length <= 40 && !t.startsWith(tag.toLowerCase()));
+}
+
 async function api(method, route, body) {
   const url = new URL(`${ORIGIN}/api/v3${route}`);
   url.searchParams.set("learning_language_code", LANG);
@@ -94,7 +105,7 @@ function toPost(file) {
     hero_image_alt: heroAlt,
     level: data.level || "",
     category: data.category || "",
-    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+    tags: cleanTags(data.tags, data.title),
     status: data.draft ? "draft" : "published",
     // A draft gets its date when someone publishes it in admin.
     ...(data.draft ? {} : { published_at: `${String(data.date).slice(0, 10)}T09:00:00Z` }),
