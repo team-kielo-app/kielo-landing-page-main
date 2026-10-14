@@ -92,8 +92,8 @@ export const SITE_LANGUAGES: Record<LearningLanguageCode, SiteLanguage> = {
     goals: ["SFI", "work in Sweden", "everyday life in Sweden"],
     socials: {
       tiktok: "https://www.tiktok.com/@swedish.kielo.app",
-      instagram: "https://www.instagram.com/kielo.app.swedish",
-      youtube: "https://www.youtube.com/@SwedishKielo/shorts",
+      instagram: "https://www.instagram.com/swedish.kielo.app",
+      youtube: "https://www.youtube.com/@KieloSwedish/shorts",
     },
   },
 };
